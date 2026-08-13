@@ -32,8 +32,11 @@ function withSuspense(element: ReactNode) {
   return <Suspense fallback={<PageFallback />}>{element}</Suspense>;
 }
 
-export const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
-  { path: "/:slug", element: withSuspense(<CaseStudyPage />) },
-  { path: "*", element: withSuspense(<NotFoundPage />) },
-]);
+export const router = createBrowserRouter(
+  [
+    { path: "/", element: <HomePage /> },
+    { path: "/:slug", element: withSuspense(<CaseStudyPage />) },
+    { path: "*", element: withSuspense(<NotFoundPage />) },
+  ],
+  { basename: import.meta.env.BASE_URL }
+);

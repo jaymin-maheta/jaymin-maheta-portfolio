@@ -29,6 +29,23 @@
       />
     </noscript>
 
+    <!-- Restore deep link redirected by public/404.html on GitHub Pages -->
+    <script>
+      (function () {
+        var l = window.location;
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, "", l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })();
+    </script>
+
     <!-- Critical: apply theme before first paint to avoid flash -->
     <script>
       (function () {
