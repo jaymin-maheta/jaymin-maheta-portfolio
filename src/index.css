@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --primary-navy: #051f16;
+  --brand-blue: #18e299;
+  --brand-blue-dark: #0c8c5e;
+  --brand-accent: #f97316;
+  --brand-gold: #ffd166;
+
+  --bg-canvas: #eef2f7;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f8fafc;
+
+  --text-heading: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+
+  --border-light: #e2e8f0;
+  --border-strong: #cbd5e1;
+}
+
+:root.dark {
+  --bg-canvas: #050505;
+  --bg-surface: #0d0d0d;
+  --bg-surface-alt: #171717;
+
+  --text-heading: #fafafa;
+  --text-body: #d4d4d4;
+  --text-muted: #a3a3a3;
+
+  --border-light: #262626;
+  --border-strong: #404040;
+}
+
+@theme inline {
+  --color-primary-navy: var(--primary-navy);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-gold: var(--brand-gold);
+  --color-bg-canvas: var(--bg-canvas);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-surface-alt: var(--bg-surface-alt);
+  --color-text-heading: var(--text-heading);
+  --color-text-body: var(--text-body);
+  --color-text-muted: var(--text-muted);
+  --color-border-light: var(--border-light);
+  --color-border-strong: var(--border-strong);
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: var(--font-display);
+}
