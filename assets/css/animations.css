@@ -1,0 +1,57 @@
+/*
+ * Base (pre-JS) state for the scroll-reveal system driven by assets/js/animations.js.
+ * Elements start hidden/offset here so there's no flash-of-unstyled-content once GSAP
+ * takes over; assets/js/anim-safety-net.js forces opacity back to 1 if GSAP never runs.
+ */
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-item,
+.hero-reveal,
+.nav-reveal {
+  opacity: 0;
+}
+
+.reveal,
+.hero-reveal,
+.nav-reveal {
+  transform: translateY(24px);
+}
+
+.reveal-left {
+  transform: translateX(-28px);
+}
+
+.reveal-right {
+  transform: translateX(28px);
+}
+
+.reveal-item {
+  transform: translateY(16px);
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.parallax-orb {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-item,
+  .hero-reveal,
+  .nav-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .tilt-card {
+    will-change: auto;
+  }
+}
