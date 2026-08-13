@@ -2,11 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/jaymin-maheta-portfolio/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jayminmaheta</title>
-    <script type="module" crossorigin src="/jaymin-maheta-portfolio/assets/index-CzObYwPY.js"></script>
-    <link rel="stylesheet" crossorigin href="/jaymin-maheta-portfolio/assets/index-D64VDMd1.css">
+    <title>Jaymin Maheta — Senior UI Engineer | Portfolio</title>
+    <meta name="description" content="Senior UI Engineer with 7+ years of experience building responsive, accessible and production-ready enterprise applications using Angular and React. With a strong foundation in UI/UX design, I specialise in transforming Figma designs into pixel-perfect interfaces while bridging the gap between design and engineering - across design systems, reusable component libraries, frontend architecture, accessibility and Angular modernisation." />
+
+    <!-- DNS + connection warmup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Non-blocking font CSS (swap) — only the weights we actually use -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      />
+    </noscript>
+
+    <!-- Restore deep link redirected by public/404.html on GitHub Pages -->
+    <script>
+      (function () {
+        var l = window.location;
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, "", l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })();
+    </script>
+
+    <!-- Critical: apply theme before first paint to avoid flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (stored === "dark" || (!stored && prefersDark)) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Minimal critical color so first paint isn't white flash on dark systems -->
+    <style>
+      html, body { margin: 0; background: #f8fafc; }
+      html.dark, html.dark body { background: #030712; }
+    </style>
+    <script type="module" crossorigin src="/jaymin-maheta-portfolio/assets/index-DTaRIYXz.js"></script>
+    <link rel="modulepreload" crossorigin href="/jaymin-maheta-portfolio/assets/rolldown-runtime-Dik6OG8R.js">
+    <link rel="modulepreload" crossorigin href="/jaymin-maheta-portfolio/assets/framer-motion-7hx2dq-_.js">
+    <link rel="modulepreload" crossorigin href="/jaymin-maheta-portfolio/assets/react-vendor-BDlWmDE4.js">
+    <link rel="stylesheet" crossorigin href="/jaymin-maheta-portfolio/assets/index-D0jITE0i.css">
   </head>
   <body>
     <div id="root"></div>
