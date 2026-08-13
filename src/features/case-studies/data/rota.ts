@@ -1,0 +1,112 @@
+import type { CaseStudyData } from "../types";
+
+export const rota: CaseStudyData = {
+  meta: {
+    slug: "rota",
+    shortName: "Ro",
+    navLabel: "Rota",
+    title: "rota_web",
+    accentFrom: "sky-500",
+    accentTo: "blue-600",
+    industry: "Workforce Management / UK Care Homes",
+    stack: "Angular · PrimeNG · FullCalendar",
+    role: "Senior UI Engineer · Augmented Tech Labs",
+  },
+  hero: {
+    eyebrow: "Project Case Study",
+    heading: "Staff Rostering, Time & Attendance and Payroll for UK Residential Care Homes",
+    subheading:
+      "rota_web covers employee records, drag-and-drop shift rostering, time logging and UK-statutory payroll reporting across every Home, Unit and Department.",
+  },
+  metrics: [
+    { icon: "layers-3d", gradientFrom: "sky-500", gradientTo: "blue-600", value: "3-Tier Hierarchy", description: "Home → Unit → Department structure spans every care home site the business operates" },
+    { icon: "calendar", gradientFrom: "orange-500", gradientTo: "amber-600", value: "Drag & Drop", description: "FullCalendar-powered shift allocation, auto-allocation and shift swaps" },
+    { icon: "layers-flag", gradientFrom: "emerald-500", gradientTo: "emerald-600", value: "UK Payroll", description: "NI numbers, holiday accrual and 4-weekly payroll periods built into the core model" },
+    { icon: "server", gradientFrom: "violet-500", gradientTo: "purple-600", value: "Live Coverage", description: "'Who's On' and 'Who's Not Arrived' give safety-critical, real-time shift visibility" },
+  ],
+  flowTitle: "Employee-to-Payroll Rostering Flow",
+  flowSubtitle: "From employee record through shift rostering and time logging to payroll and reporting",
+  flow: [
+    { icon: "users", iconGradientFrom: "slate-700", iconGradientTo: "slate-900", title: "Employee", subtitle: "HR record per Home", connectorLabel: "Assign", connectorColor: "blue" },
+    { icon: "layers-flag", iconGradientFrom: "sky-500", iconGradientTo: "blue-600", title: "Department", subtitle: "Shift requirement", connectorLabel: "Allocate", connectorColor: "blue" },
+    { icon: "calendar", iconGradientFrom: "orange-500", iconGradientTo: "amber-600", title: "Roster & Schedule", subtitle: "Drag-drop allocation", connectorLabel: "Clock In", connectorColor: "blue" },
+    { icon: "clock", iconGradientFrom: "violet-500", iconGradientTo: "purple-600", title: "Time Log", subtitle: "Clock in / out", connectorLabel: "Calculate", connectorColor: "emerald" },
+    { icon: "bar-chart", iconGradientFrom: "emerald-500", iconGradientTo: "emerald-600", title: "Payroll & Reports", subtitle: "Pay periods & hours", highlighted: true },
+  ],
+  about: {
+    icon: "file-text",
+    title: "About the Product",
+    paragraphs: [
+      "rota_web is a workforce-management and staff-scheduling system built for the residential and domiciliary care home sector in the UK — covering employee records, shift rostering, time and attendance, holiday tracking, payroll-hours reporting and role-based user administration.",
+      "The organisational hierarchy runs Home → Unit → Department → Job Role → Employee, and the data model carries real UK statutory fields — National Insurance number, Equality Act monitoring data, statutory holiday accrual — alongside care-specific fields like medical conditions and emergency contacts.",
+      "Because care staffing is safety-critical, live shift-coverage reports — 'Who's On' and 'Who's Not Arrived' — sit alongside the payroll and reporting suite as first-class report types, not an afterthought.",
+    ],
+  },
+  challenge: {
+    icon: "alert-triangle",
+    title: "The Challenge",
+    emphasisParagraph:
+      "Care homes need to know who's actually on shift right now, not just who was scheduled — and every hour logged has to reconcile against UK statutory payroll rules.",
+    paragraphs: [
+      "The system needed drag-and-drop shift allocation across multiple Homes and Departments, a feature × permission × role matrix fine-grained enough for real operational control, and payroll reporting that matched UK 4-weekly pay periods with regular, overtime and holiday hour breakdowns.",
+    ],
+  },
+  contribution: [
+    { text: "Researched and evaluated the FullCalendar library for roster view customisation, theming, multiple view options and print support." },
+    { text: "Implemented the interactive dashboard charts using Chart.js." },
+  ],
+  outcomes: {
+    challenges: [
+      "Rostering shifts across a Home → Unit → Department hierarchy with department-specific staffing needs",
+      "Giving managers live visibility into who's actually on shift versus who was scheduled",
+      "Reconciling clocked time against scheduled shifts, with approval and regularisation requests",
+      "Modelling UK-statutory payroll correctly — NI numbers, holiday accrual, 4-weekly pay periods",
+      "Enforcing fine-grained, feature-level permissions across add/edit/delete/publish/commit actions",
+      "Keeping shift-swap, auto-allocation and roster-publish actions safe and auditable",
+    ],
+    outcomesIntro: "The platform delivered measurable improvements to how care homes manage staffing, including:",
+    outcomes: [
+      "Drag-and-drop shift rostering across every Home, Unit and Department from one calendar view",
+      "Real-time 'Who's On' and 'Who's Not Arrived' coverage reporting for safety-critical staffing",
+      "Time & attendance logging with approval and regularisation requests tied to scheduled shifts",
+      "UK-statutory payroll reporting — regular, overtime and holiday hours by current vs prior period",
+      "A granular feature × permission × role matrix covering 18 distinct rostering actions",
+      "Holiday accrual tracking (Accrual vs Fixed, Days vs Hours) matching UK entitlement rules",
+    ],
+    summary:
+      "rota_web gives care home operators one system for staffing every Home — from employee records and drag-and-drop rostering through time logging to UK-statutory payroll, with live coverage reporting that keeps safety-critical staffing visible in real time.",
+  },
+  approachIntro:
+    "We built rota_web as a standalone-component Angular application on PrimeNG and Tailwind, centring the roster module on FullCalendar's resource-timeline view for the drag-and-drop scheduling experience care coordinators needed.",
+  approach: [
+    { title: "Care-Home Domain & Employee Records", description: "The Home → Unit → Department → Job Role hierarchy and UK-statutory employee fields (NI number, Equality Act data) were modelled first as the foundation for every other module." },
+    { title: "Department & Shift Templates", description: "Departments define shift requirements — quantity needed per day, pay rate, job role — that the roster module allocates employees against." },
+    { title: "Drag-and-Drop Rostering", description: "A FullCalendar resource-timeline view handles shift allocation, auto-allocation and swaps, with roster publish/commit/clone actions for coordinators." },
+    { title: "Time & Attendance, Payroll", description: "Clock in/out, regularisation requests and current-vs-prior-period payroll reporting connect logged hours back to UK statutory pay rules." },
+    { title: "Coverage Reporting & Permissions", description: "'Who's On'/'Who's Not Arrived' live reports and an 18-flag feature × permission × role matrix rounded out safety-critical visibility and access control." },
+  ],
+  techStack: [
+    { badge: "Ng", category: "Frontend Framework", name: "Angular 19", description: "Standalone components and Angular Signals throughout, with a custom PrimeNG Aura theme built for the care-home brand.", accent: "sky" },
+    { badge: "Tw", category: "CSS Framework", name: "Tailwind CSS v4", description: "Tailwind v4's CSS-first configuration bridges directly with PrimeNG via tailwindcss-primeui, keeping utilities and component theming in sync.", accent: "orange" },
+    { badge: "Fc", category: "Scheduling UI", name: "FullCalendar", description: "A resource-timeline FullCalendar view powers the roster module — the largest single component in the app — handling drag-and-drop allocation and shift swaps.", accent: "emerald" },
+    { badge: "So", category: "Real-Time", name: "Socket.IO", description: "A Socket.IO channel detects permission changes and forces a re-login for affected users, keeping access control accurate the moment roles change.", accent: "violet" },
+  ],
+  snapshot: {
+    fields: [
+      { label: "Industry", value: "Workforce Management / UK Care Homes" },
+      { label: "Product Type", value: "Staff Rostering & Payroll System" },
+      { label: "Core Stack", value: "Angular · PrimeNG · FullCalendar · Tailwind v4" },
+      { label: "Regulatory Focus", value: "UK NI, Equality Act & Holiday Entitlement" },
+    ],
+    capabilities: [
+      "Multi-Home Rostering",
+      "Drag-and-Drop Shift Allocation",
+      "Time & Attendance Tracking",
+      "UK-Statutory Payroll",
+      "Holiday & Unavailability Tracking",
+      "Who's On Coverage Reporting",
+      "Feature-Level Permission Matrix",
+      "Employee HR Records",
+    ],
+  },
+};
