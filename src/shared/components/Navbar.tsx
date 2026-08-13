@@ -15,34 +15,44 @@ export function Navbar({ shortName, eyebrow, title, homeLink, switcher }: Navbar
   const reduceMotion = useReducedMotion();
 
   return (
-    <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+    <motion.header
+      initial={reduceMotion ? false : { opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative z-10 flex flex-col gap-5 border-b-2 border-border-light bg-bg-surface px-6 py-6 transition-colors duration-300 sm:px-10 md:flex-row md:items-center md:justify-between md:px-16 md:py-8 lg:px-20"
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className="theme-transition sticky top-0 z-50 border-b border-border-light bg-bg-surface/80 backdrop-blur-xl backdrop-saturate-150"
     >
-      <div className="flex items-center gap-3">
-        <Link
-          to="/"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-blue to-brand-blue-dark text-base font-extrabold text-white shadow-lg shadow-brand-blue/25"
-        >
-          {shortName}
-        </Link>
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-blue">{eyebrow}</p>
-          <p className="text-lg font-extrabold leading-tight text-text-heading">{title}</p>
-          {homeLink && (
-            <Link to={homeLink.href} className="text-[11.5px] font-semibold text-text-muted transition hover:text-brand-blue">
-              {homeLink.label}
-            </Link>
-          )}
+      <div className="flex flex-col gap-4 px-5 py-4 sm:px-8 sm:py-5 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16">
+        <div className="flex items-center gap-3.5">
+          <Link
+            to="/"
+            aria-label="Home — Jaymin Maheta"
+            className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-sm font-extrabold text-white shadow-md shadow-primary-500/20 transition hover:shadow-lg hover:shadow-primary-500/30 focus-visible:outline-offset-2"
+          >
+            {shortName}
+          </Link>
+          <div className="min-w-0">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
+              {eyebrow}
+            </p>
+            <p className="truncate text-base font-bold leading-tight text-text-heading sm:text-lg">
+              {title}
+            </p>
+            {homeLink && (
+              <Link
+                to={homeLink.href}
+                className="text-[12px] font-medium text-text-muted transition hover:text-brand-blue"
+              >
+                {homeLink.label}
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+          {switcher}
+          <ThemeToggle />
         </div>
       </div>
-
-      <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-        {switcher}
-        <ThemeToggle />
-      </div>
-    </motion.div>
+    </motion.header>
   );
 }

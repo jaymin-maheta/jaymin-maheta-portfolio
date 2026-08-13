@@ -59,7 +59,7 @@ function buildBundle(
   opacityScale: number,
   isAccentChance: number
 ): FlowLine[] {
-  const segments = 48;
+  const segments = 28;
   const lines: FlowLine[] = [];
 
   for (let i = 0; i < count; i++) {
@@ -133,14 +133,14 @@ export function HeroBackground() {
 
       const primary = buildBundle(
         { x: hx * 1.02, y: hy * 1.08 },
-        42,
+        18,
         { startJitter: hy * 0.16, endJitter: width * 0.6, reach: 0.6, bowMin: hy * 0.3, bowMax: hy * 1.7, bowJitter: hy * 0.4 },
         1,
         0.07
       );
       const secondary = buildBundle(
         { x: -hx * 1.1, y: -hy * 1.2 },
-        10,
+        4,
         { startJitter: hy * 0.12, endJitter: width * 0.28, reach: 0.3, bowMin: hy * 0.15, bowMax: hy * 0.7, bowJitter: hy * 0.2 },
         0.22,
         0.07

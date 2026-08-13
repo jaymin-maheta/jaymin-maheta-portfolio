@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jaymin Maheta — Senior UI Engineer | Portfolio</title>
     <meta name="description" content="Senior UI Engineer with 7+ years of experience building responsive, accessible and production-ready enterprise applications using Angular and React. With a strong foundation in UI/UX design, I specialise in transforming Figma designs into pixel-perfect interfaces while bridging the gap between design and engineering - across design systems, reusable component libraries, frontend architecture, accessibility and Angular modernisation." />
+
+    <!-- DNS + connection warmup -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Non-blocking font CSS (swap) — only the weights we actually use -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      />
+    </noscript>
+
+    <!-- Critical: apply theme before first paint to avoid flash -->
     <script>
       (function () {
         try {
@@ -22,6 +41,12 @@
         } catch (e) {}
       })();
     </script>
+
+    <!-- Minimal critical color so first paint isn't white flash on dark systems -->
+    <style>
+      html, body { margin: 0; background: #f8fafc; }
+      html.dark, html.dark body { background: #030712; }
+    </style>
   </head>
   <body>
     <div id="root"></div>

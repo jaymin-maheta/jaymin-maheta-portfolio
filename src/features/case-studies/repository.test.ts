@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getAllCaseStudies, getCaseStudyBySlug } from "./repository";
+import { getAllCaseStudies, loadCaseStudyBySlug } from "./repository";
 
 describe("case-studies repository", () => {
   it("getAllCaseStudies returns a non-empty list of case study metadata", () => {
@@ -9,16 +9,16 @@ describe("case-studies repository", () => {
     expect(all[0]).toHaveProperty("navLabel");
   });
 
-  it("getCaseStudyBySlug returns full data for a known slug", () => {
+  it("loadCaseStudyBySlug returns full data for a known slug", async () => {
     const all = getAllCaseStudies();
     const knownSlug = all[0].slug;
-    const data = getCaseStudyBySlug(knownSlug);
+    const data = await loadCaseStudyBySlug(knownSlug);
     expect(data).toBeDefined();
     expect(data?.meta.slug).toBe(knownSlug);
   });
 
-  it("getCaseStudyBySlug returns undefined for an unknown slug", () => {
-    const data = getCaseStudyBySlug("not-a-real-project-slug");
+  it("loadCaseStudyBySlug returns undefined for an unknown slug", async () => {
+    const data = await loadCaseStudyBySlug("not-a-real-project-slug");
     expect(data).toBeUndefined();
   });
 });

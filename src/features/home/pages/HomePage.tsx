@@ -13,7 +13,7 @@ export function HomePage() {
     <Layout>
       <Navbar shortName="JM" eyebrow="Portfolio" title="Jaymin Maheta" />
       <HomeHero />
-      <div className="relative z-10 px-6 py-14 sm:px-10 md:px-16 md:py-16 lg:px-20">
+      <div className="relative z-10 content-auto px-5 py-12 sm:px-8 sm:py-14 md:px-12 md:py-16 lg:px-16">
         <RecognitionStrip />
         <ProjectGrid projects={projects} />
       </div>

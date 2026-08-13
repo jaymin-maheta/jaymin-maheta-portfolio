@@ -1,7 +1,12 @@
 export function Footer() {
   return (
-    <div className="border-t-2 border-border-light px-6 py-8 text-center text-[13px] font-semibold text-text-muted sm:px-10 md:px-16 lg:px-20">
-      Jaymin Maheta &middot; Senior UI Engineer &middot; Augmented Tech Labs
-    </div>
+    <footer className="theme-transition border-t border-border-light bg-bg-muted/50 px-5 py-8 text-center sm:px-8 md:px-12 lg:px-16">
+      <p className="text-[13px] font-medium text-text-muted">
+        Jaymin Maheta · Senior UI Engineer · Augmented Tech Labs
+      </p>
+      <p className="mt-1.5 text-[12px] text-text-subtle">
+        Built with React, TypeScript & Tailwind · Accessible & performant
+      </p>
+    </footer>
   );
 }
