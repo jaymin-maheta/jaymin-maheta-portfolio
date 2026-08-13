@@ -15,13 +15,15 @@ function readInitialIsDark(): boolean {
 export function useTheme() {
   const [isDark, setIsDark] = useState<boolean>(readInitialIsDark);
 
+  // Apply initial theme class on mount
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
+  }, []);
 
   const toggle = useCallback(() => {
     setIsDark((prev) => {
       const next = !prev;
+      document.documentElement.classList.toggle("dark", next);
       try {
         localStorage.setItem("theme", next ? "dark" : "light");
       } catch {
