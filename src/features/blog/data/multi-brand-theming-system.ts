@@ -1,0 +1,51 @@
+import type { BlogPost } from "../types";
+
+export const multiBrandThemingSystem: BlogPost = {
+  meta: {
+    slug: "multi-brand-theming-system",
+    title: "Building a Theming System That Survives Multiple Brands and Multiple Products",
+    excerpt:
+      "Rota needed a bespoke care-home brand. Valyxto needed a visual refresh without touching a single working screen. Same token system, two very different jobs.",
+    tag: "UI/UX Design",
+    readTime: "6 min",
+    publishedLabel: "Field notes",
+  },
+  intro:
+    "Two projects, two opposite theming problems. On rota_web I built a custom PrimeNG Aura theme from scratch for a care-home brand that didn't exist yet. On Valyxto I refreshed an already-live application's entire visual theme without touching a single line of underlying functionality — dozens of transactional screens, zero regressions allowed. Both jobs used the same underlying idea: theming is a token design problem, not a component-by-component restyling problem.",
+  sections: [
+    {
+      heading: "A theme is a token map, not a set of overrides",
+      paragraphs: [
+        "The failure mode I keep seeing — and keep being brought in to fix — is a theme built as accumulated per-component overrides: this button is blue because someone set it, that badge is a slightly different blue because someone else set it later. There's no single source of truth, so 'change the brand color' becomes a grep across hundreds of files instead of editing one map.",
+        "The alternative is designing a semantic token layer first — colors named by role (surface, border-strong, text-muted, accent-500) rather than by value — and letting every component reference only those roles. On Rota, PrimeUIX's theme preset system made this concrete: the entire care-home brand identity lives in one theme configuration object, and every PrimeNG component picks it up automatically because none of them were ever given a hardcoded color.",
+      ],
+    },
+    {
+      heading: "Restyling a live product without breaking it",
+      paragraphs: [
+        "Valyxto's brief was the harder version of theming: refresh the look of an application already running dozens of live transactional screens — orders, purchasing, inventory, warehouse transfers — without touching functionality underneath. That constraint changes how you're allowed to work. You can't restructure components to make the new theme easier to apply; you have to make the new theme work within the existing component contracts.",
+        "In practice that meant restyling PrimeNG tables, dialogs and forms in place and layering Tailwind utilities for the custom layout needs specific screens had, rather than introducing new component variants that would need functional QA. The design deliverable wasn't 'how should this screen look' — every screen's behavior was already correct — it was 'what's the smallest token and style change that shifts the entire visual identity at once.'",
+      ],
+      bullets: [
+        "Audit which components already reference semantic tokens versus hardcoded values before touching any visual design",
+        "Restyle the token map and spot-check, rather than redesigning screen by screen",
+        "Treat 'zero functional regression' as a design constraint, not just an engineering one — new variants are often not an option",
+      ],
+    },
+    {
+      heading: "Designing for a theme that doesn't exist yet",
+      paragraphs: [
+        "Rota was the opposite problem: a brand-new care-home brand identity with no existing screens to preserve. That freedom is deceptive — without real constraints, it's easy to over-design a palette that looks good in a style tile and falls apart across FullCalendar's resource-timeline view, which is the largest, busiest single component in the app.",
+        "I designed the palette against the hardest screen first — the live roster board with drag-and-drop shift blocks, coverage badges and status colors all competing for attention — rather than against a marketing-style component showcase. If a color system survives a resource-timeline view with forty shift blocks on screen, it survives everywhere easier.",
+      ],
+    },
+    {
+      heading: "What makes a token system actually hold",
+      paragraphs: [
+        "The token system is only as strong as the discipline around touching raw values. Every enterprise theme I've built or fixed eventually needed the same guardrail: a lint rule or review checklist item that flags a hardcoded hex or px value outside the theme/tokens layer, because without it, the first deadline-pressured exception becomes the second, and within a few months you're back to per-component overrides.",
+      ],
+    },
+  ],
+  takeaway:
+    "Whether you're building a brand from nothing or restyling a live product without breaking it, the actual design deliverable is the same: a small, disciplined token map that every component reads from, so 'change the theme' stays a five-minute edit instead of a screen-by-screen project.",
+};
