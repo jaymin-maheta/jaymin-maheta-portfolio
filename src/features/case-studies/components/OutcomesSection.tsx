@@ -57,7 +57,7 @@ export function OutcomesSection({ outcomes }: { outcomes: OutcomesContent }) {
         </Reveal>
       </div>
 
-      <Reveal className="mt-8 rounded-r-2xl border-y-[1.5px] border-r-[1.5px] border-l-[6px] border-border-strong border-l-brand-blue bg-gradient-to-br from-sky-50 to-blue-50 p-6 text-[15px] font-semibold leading-relaxed text-text-heading shadow-lg shadow-sky-900/5 transition-colors duration-300 dark:from-sky-950/30 dark:to-blue-950/20 sm:p-8 sm:text-base">
+      <Reveal className="mt-8 rounded-r-2xl border-y-[1.5px] border-r-[1.5px] border-l-[6px] border-border-strong border-l-brand-blue bg-gradient-to-br from-accent-50 to-bg-surface-alt p-6 text-[15px] font-semibold leading-relaxed text-text-heading shadow-lg shadow-accent-900/5 transition-colors duration-300 dark:from-accent-950/20 dark:to-bg-surface-alt sm:p-8 sm:text-base">
         {outcomes.summary}
       </Reveal>
     </div>

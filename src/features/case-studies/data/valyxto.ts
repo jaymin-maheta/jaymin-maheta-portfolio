@@ -94,6 +94,47 @@ export const valyxto: CaseStudyData = {
     { badge: "Cj", category: "BI & Dashboards", name: "Chart.js & Gridster", description: "A gridster-based widget grid renders metric, bar, donut, line and gauge visualisations, each backed by a previously saved report.", accent: "emerald" },
     { badge: "Rt", category: "Real-Time", name: "SignalR", description: "A SignalR notification hub delivers live purchase-approval alerts to the roles responsible for approving them.", accent: "violet" },
   ],
+  designProcess: [
+    {
+      stage: "Design in Figma",
+      description: "Every module starts as a high-fidelity Figma file — real states, real edge cases, not just the happy path.",
+      projectDetail: "Refreshed the application's existing visual theme without touching underlying functionality — a constrained design pass across dozens of live transactional screens.",
+    },
+    {
+      stage: "Map to the Design System",
+      description: "Every Figma component maps one-to-one to a real, typed UI component — no variant exists in the design file that doesn't exist in code.",
+      projectDetail: "Restyled PrimeNG tables, dialogs and forms in place, layered with Tailwind CSS utilities for the custom layout needs of order-to-cash and procure-to-pay screens.",
+    },
+    {
+      stage: "Build & Implement",
+      description: "Angular Signals and RxJS working alongside each other, adopted incrementally rather than through a disruptive rewrite.",
+      projectDetail: "Implemented the interactive dashboard charts using Chart.js, and led R&D on Gridster2 for drag-and-drop dashboard customisation and resizable widgets.",
+    },
+    {
+      stage: "Accessibility & Responsive QA",
+      description: "Keyboard navigation, focus order and contrast get verified against the real component, not just checked in the design file.",
+      projectDetail: "Delivered responsive layouts optimised for multiple screen sizes across every transactional list screen in the workspace.",
+    },
+    {
+      stage: "Ship to Production",
+      description: "A repeatable release process so new dashboard widgets and report types reach warehouse and finance teams without disruption.",
+      projectDetail: "Helped developers persist Gridster dashboard layouts through existing APIs, so a saved report becomes a live, rearrangeable widget in production.",
+    },
+  ],
+  mockup: {
+    title: "BI Dashboard — Warehouse Overview",
+    description:
+      "An illustrative layout of the Gridster-based dashboard: saved reports rendered as configurable chart widgets alongside live stock and order metrics.",
+    navItems: ["Orders", "Purchasing", "Inventory", "Warehouses", "Reports", "Dashboard"],
+    columns: ["Item", "Warehouse", "Bin/Lot", "Qty"],
+    rowCount: 6,
+    stats: [
+      { label: "Open Orders", value: "214" },
+      { label: "Warehouses", value: "6" },
+      { label: "Low Stock SKUs", value: "31" },
+      { label: "AR Overdue", value: "£58k" },
+    ],
+  },
   snapshot: {
     fields: [
       { label: "Industry", value: "Wholesale Distribution / ERP" },

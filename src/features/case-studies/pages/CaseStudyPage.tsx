@@ -9,10 +9,12 @@ import { MetaBadges } from "../components/MetaBadges";
 import { CaseStudyHero } from "../components/CaseStudyHero";
 import { MetricsGrid } from "../components/MetricsGrid";
 import { FlowDiagram } from "../components/FlowDiagram";
+import { UIMockupPanel } from "../components/UIMockupPanel";
 import { AboutAndChallenge } from "../components/InfoCard";
 import { ContributionCard } from "../components/ContributionCard";
 import { OutcomesSection } from "../components/OutcomesSection";
 import { ApproachSteps } from "../components/ApproachSteps";
+import { DesignProcessDiagram } from "../components/DesignProcessDiagram";
 import { TechStackGrid } from "../components/TechStackGrid";
 import { SnapshotFooter } from "../components/SnapshotFooter";
 import { NotFoundPage } from "./NotFoundPage";
@@ -77,6 +79,7 @@ export function CaseStudyPage() {
         <MetricsGrid metrics={data.metrics} />
         <div className="relative z-10 mx-auto max-w-7xl content-auto px-5 pb-14 pt-12 sm:px-8 sm:pb-16 sm:pt-14 md:px-12 md:pb-20 md:pt-16 lg:px-16">
           <FlowDiagram title={data.flowTitle} subtitle={data.flowSubtitle} steps={data.flow} />
+          <UIMockupPanel mockup={data.mockup} />
           <AboutAndChallenge about={data.about} challenge={data.challenge} />
           <ContributionCard
             role={data.meta.role}
@@ -85,6 +88,7 @@ export function CaseStudyPage() {
           />
           <OutcomesSection outcomes={data.outcomes} />
           <ApproachSteps intro={data.approachIntro} steps={data.approach} />
+          <DesignProcessDiagram steps={data.designProcess} />
           <TechStackGrid items={data.techStack} />
           <SnapshotFooter snapshot={data.snapshot} />
         </div>

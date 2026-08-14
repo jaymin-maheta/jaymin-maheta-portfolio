@@ -96,6 +96,47 @@ export const bmc: CaseStudyData = {
     { badge: "40+", category: "Reporting", name: "MIS Report Suite", description: "A dedicated reporting module renders financial, operational and clinical report screens, server-generated and streamed back as export-ready files.", accent: "emerald" },
     { badge: "Cj", category: "Charts", name: "Chart.js", description: "Chart.js drives periodic dashboard visuals across financial and operational summaries, alongside Quill for rich-text clinical notes.", accent: "violet" },
   ],
+  designProcess: [
+    {
+      stage: "Design in Figma",
+      description: "Every module starts as a high-fidelity Figma file — real states, real edge cases, not just the happy path.",
+      projectDetail: "Reviewed design work from 5 UI/UX designers across the platform, giving guidance on design best practices and UI consistency for a team this large.",
+    },
+    {
+      stage: "Map to the Design System",
+      description: "Every Figma component maps one-to-one to a real, typed UI component — no variant exists in the design file that doesn't exist in code.",
+      projectDetail: "Rebuilt the stylesheet on a scalable 7-1 SCSS architecture with customisable PrimeNG theme variables, giving every department module a consistent visual base to build on.",
+    },
+    {
+      stage: "Build & Implement",
+      description: "A lazy-loaded, department-by-department Angular application, so front desk, pathology, pharmacy and billing can each ship independently.",
+      projectDetail: "Reviewed code for 5 frontend developers to keep quality and consistency high, and built HTML-to-PDF report generation for printable application reports.",
+    },
+    {
+      stage: "Accessibility & Responsive QA",
+      description: "Keyboard navigation, focus order and contrast get verified against the real component, not just checked in the design file.",
+      projectDetail: "Improved platform accessibility with keyboard navigation, visible focus states and stronger colour contrast, and delivered layouts responsive from small to large laptop screens.",
+    },
+    {
+      stage: "Ship to Production",
+      description: "A repeatable release process so new department modules reach 200+ hospital staff without disrupting daily clinical operations.",
+      projectDetail: "Shipped as part of an enterprise healthcare platform used by 200+ government hospital staff across front desk, clinical and financial departments.",
+    },
+  ],
+  mockup: {
+    title: "Front Desk — Patient Registration",
+    description:
+      "An illustrative layout of the front-desk workspace: quick registration and multi-field search alongside today's OPD/IPD episode queue.",
+    navItems: ["Registration", "Appointments", "Pathology", "Pharmacy", "Billing", "MIS Reports"],
+    columns: ["Patient", "Episode", "Doctor", "Status"],
+    rowCount: 6,
+    stats: [
+      { label: "Today's OPD", value: "184" },
+      { label: "IPD Occupied", value: "62" },
+      { label: "Pending Labs", value: "27" },
+      { label: "Billing Queue", value: "15" },
+    ],
+  },
   snapshot: {
     fields: [
       { label: "Industry", value: "Healthcare Provider Operations (India)" },

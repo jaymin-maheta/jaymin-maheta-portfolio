@@ -19,13 +19,13 @@ function ProjectCardComponent({ project, index, description, tags }: ProjectCard
       className="group theme-transition relative flex flex-col overflow-hidden rounded-2xl border border-border-light bg-bg-surface shadow-[var(--shadow-sm)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-[var(--shadow-xl)]"
     >
       <span
-        className={`block h-1 bg-gradient-to-r from-${project.accentFrom} to-${project.accentTo}`}
+        className="block h-1 bg-gradient-to-r from-accent-500 to-accent-300"
         aria-hidden="true"
       />
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div
-          className={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-${project.accentFrom} to-${project.accentTo} text-sm font-bold text-white shadow-md transition-transform duration-300 group-hover:scale-110`}
+          className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-800 to-primary-950 text-sm font-bold text-white shadow-md transition-transform duration-300 group-hover:scale-110"
           aria-hidden="true"
         >
           {String(index + 1).padStart(2, "0")}

@@ -92,6 +92,47 @@ export const rota: CaseStudyData = {
     { badge: "Fc", category: "Scheduling UI", name: "FullCalendar", description: "A resource-timeline FullCalendar view powers the roster module — the largest single component in the app — handling drag-and-drop allocation and shift swaps.", accent: "emerald" },
     { badge: "So", category: "Real-Time", name: "Socket.IO", description: "A Socket.IO channel detects permission changes and forces a re-login for affected users, keeping access control accurate the moment roles change.", accent: "violet" },
   ],
+  designProcess: [
+    {
+      stage: "Design in Figma",
+      description: "Every module starts as a high-fidelity Figma file — real states, real edge cases, not just the happy path.",
+      projectDetail: "The roster module's design centred on a resource-timeline view, chosen specifically for how care coordinators scan staffing across departments at a glance.",
+    },
+    {
+      stage: "Map to the Design System",
+      description: "Every Figma component maps one-to-one to a real, typed UI component — no variant exists in the design file that doesn't exist in code.",
+      projectDetail: "Researched and evaluated the FullCalendar library for roster view customisation, theming, multiple view options and print support before committing it as the core scheduling component.",
+    },
+    {
+      stage: "Build & Implement",
+      description: "Standalone Angular components with Signals throughout, built on a custom PrimeNG Aura theme for the care-home brand.",
+      projectDetail: "Implemented the interactive dashboard charts using Chart.js, feeding real-time coverage and payroll-hours visuals off the same roster data.",
+    },
+    {
+      stage: "Accessibility & Responsive QA",
+      description: "Keyboard navigation, focus order and contrast get verified against the real component, not just checked in the design file.",
+      projectDetail: "Drag-and-drop rostering needed keyboard-accessible fallback paths for shift allocation, since coordinators can't always rely on a mouse mid-shift.",
+    },
+    {
+      stage: "Ship to Production",
+      description: "A repeatable release process so roster changes reach every Home safely, without disrupting live, safety-critical staffing.",
+      projectDetail: "Shipped with 'Who's On' and 'Who's Not Arrived' live coverage reporting treated as first-class report types from day one, not bolted on after launch.",
+    },
+  ],
+  mockup: {
+    title: "Roster Board — Shift Allocation",
+    description:
+      "An illustrative layout of the drag-and-drop roster: department shift rows on a resource-timeline, live 'Who's On' coverage alongside.",
+    navItems: ["Employees", "Roster", "Time & Attendance", "Payroll", "Coverage", "Reports"],
+    columns: ["Employee", "Department", "Shift", "Status"],
+    rowCount: 6,
+    stats: [
+      { label: "On Shift Now", value: "47" },
+      { label: "Not Arrived", value: "3" },
+      { label: "Open Shifts", value: "9" },
+      { label: "Homes Live", value: "12" },
+    ],
+  },
   snapshot: {
     fields: [
       { label: "Industry", value: "Workforce Management / UK Care Homes" },

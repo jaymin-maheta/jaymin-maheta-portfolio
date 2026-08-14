@@ -90,6 +90,47 @@ export const farmgate: CaseStudyData = {
     { badge: "My", category: "Database", name: "MySQL + Sequelize", description: "Sequelize-TypeScript models every batch, recipe and sale with soft deletes and timestamps, and every multi-step write runs inside a database transaction.", accent: "emerald" },
     { badge: "Aws", category: "Infrastructure", name: "AWS EC2 & S3", description: "The API runs on EC2 under PM2, with Excel exports built server-side and delivered securely through S3.", accent: "violet" },
   ],
+  designProcess: [
+    {
+      stage: "Design in Figma",
+      description: "Every module starts as a high-fidelity Figma file — real states, real edge cases, not just the happy path.",
+      projectDetail: "Interface design covered the goods-in, formulation and sales screens — dense data-entry flows built around the UK feed-assurance fields the business is legally required to capture.",
+    },
+    {
+      stage: "Map to the Design System",
+      description: "Every Figma component maps one-to-one to a real, typed UI component — no variant exists in the design file that doesn't exist in code.",
+      projectDetail: "PrimeReact tables, dialogs and forms were the target component set, chosen for the density these goods-in and formulation screens needed.",
+    },
+    {
+      stage: "Build & Implement",
+      description: "React and NestJS, with every multi-step inventory change wrapped in a database transaction from day one — non-negotiable once stock deduction touches purchases, recipes and sales at once.",
+      projectDetail: "The purchase, recipe and sales engines were built as one connected pipeline, with FEFO-ordered batch selection and live cost roll-up recalculated at every level.",
+    },
+    {
+      stage: "Accessibility & Responsive QA",
+      description: "Keyboard navigation, focus order and contrast get verified against the real component, not just checked in the design file.",
+      projectDetail: "Dense data-entry screens were tested for keyboard-driven goods-in workflows, since warehouse staff often work off keyboard shortcuts rather than a mouse.",
+    },
+    {
+      stage: "Ship to Production",
+      description: "A repeatable release process so new inventory rules reach the warehouse floor without disrupting daily goods-in and goods-out.",
+      projectDetail: "The app deploys to AWS EC2 behind PM2, with every create, edit and ingredient change written to a dedicated history table for full auditability.",
+    },
+  ],
+  mockup: {
+    title: "Inventory Dashboard — Batch Overview",
+    description:
+      "An illustrative layout of the goods-in dashboard: batch traceability fields and stock valuation at a glance, FEFO order enforced automatically.",
+    navItems: ["Purchases", "Recipes", "Sales", "Dashboard", "Reports"],
+    columns: ["Batch", "UFAS No.", "Expiry", "Stock"],
+    rowCount: 6,
+    stats: [
+      { label: "Active Batches", value: "86" },
+      { label: "Low Stock Alerts", value: "4" },
+      { label: "Recipes Live", value: "23" },
+      { label: "This Month Sold", value: "£142k" },
+    ],
+  },
   snapshot: {
     fields: [
       { label: "Industry", value: "Agriculture / Animal Feed Manufacturing" },

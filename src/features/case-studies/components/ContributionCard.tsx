@@ -12,7 +12,7 @@ interface ContributionCardProps {
 export function ContributionCard({ role, items, placeholder }: ContributionCardProps) {
   return (
     <div className="mb-16 md:mb-20">
-      <Reveal className="relative overflow-hidden rounded-[20px] border-2 border-border-strong bg-gradient-to-br from-sky-50 to-bg-surface p-7 shadow-xl shadow-sky-900/5 transition-colors duration-300 dark:from-sky-950/20 dark:to-bg-surface sm:p-9">
+      <Reveal className="relative overflow-hidden rounded-[20px] border-2 border-border-strong bg-gradient-to-br from-accent-50 to-bg-surface p-7 shadow-xl shadow-accent-900/5 transition-colors duration-300 dark:from-accent-950/20 dark:to-bg-surface sm:p-9">
         <div className="absolute inset-x-0 top-0 h-1.5 bg-brand-blue"></div>
         <div className="mb-7 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-4">

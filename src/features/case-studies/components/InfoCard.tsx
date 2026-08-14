@@ -25,16 +25,16 @@ export function ChallengeCard({ challenge }: { challenge: ChallengePanel }) {
   return (
     <Reveal
       direction="right"
-      className="relative overflow-hidden rounded-[20px] border-2 border-border-strong bg-gradient-to-br from-orange-50 to-bg-surface p-7 shadow-xl shadow-orange-900/5 transition-colors duration-300 dark:from-orange-950/20 dark:to-bg-surface sm:p-9"
+      className="relative overflow-hidden rounded-[20px] border-2 border-border-strong bg-gradient-to-br from-accent-50 to-bg-surface p-7 shadow-xl shadow-accent-900/5 transition-colors duration-300 dark:from-accent-950/20 dark:to-bg-surface sm:p-9"
     >
       <div className="absolute inset-x-0 top-0 h-1.5 bg-brand-accent"></div>
       <div className="mb-6 flex items-center gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-accent to-orange-600 text-white shadow-lg shadow-orange-500/20">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-accent to-accent-600 text-white shadow-lg shadow-accent-500/20">
           <Icon name={challenge.icon} className="h-6 w-6" />
         </div>
         <h2 className="text-xl font-extrabold text-text-heading sm:text-2xl">{challenge.title}</h2>
       </div>
-      <p className="mb-4 text-[15px] font-semibold leading-relaxed text-orange-900 dark:text-orange-200">{challenge.emphasisParagraph}</p>
+      <p className="mb-4 text-[15px] font-semibold leading-relaxed text-accent-900 dark:text-accent-200">{challenge.emphasisParagraph}</p>
       {challenge.paragraphs.map((p, i) => (
         <p key={i} className="text-[15px] leading-relaxed text-text-body">
           {p}

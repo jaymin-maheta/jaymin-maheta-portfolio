@@ -3,10 +3,16 @@ import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "../features/home/pages/HomePage";
 import { RouteError } from "./RouteError";
 
-// Lazy-load case study & 404 so the home page ships a smaller initial chunk
+// Lazy-load case study, blog post & 404 so the home page ships a smaller initial chunk
 const CaseStudyPage = lazy(() =>
   import("../features/case-studies/pages/CaseStudyPage").then((m) => ({
     default: m.CaseStudyPage,
+  }))
+);
+
+const BlogPostPage = lazy(() =>
+  import("../features/blog/pages/BlogPostPage").then((m) => ({
+    default: m.BlogPostPage,
   }))
 );
 
@@ -36,6 +42,7 @@ function withSuspense(element: ReactNode) {
 export const router = createBrowserRouter(
   [
     { path: "/", element: <HomePage />, errorElement: <RouteError /> },
+    { path: "/blog/:slug", element: withSuspense(<BlogPostPage />), errorElement: <RouteError /> },
     { path: "/:slug", element: withSuspense(<CaseStudyPage />), errorElement: <RouteError /> },
     { path: "*", element: withSuspense(<NotFoundPage />), errorElement: <RouteError /> },
   ],

@@ -120,6 +120,47 @@ export const compito: CaseStudyData = {
     { badge: "Qb", category: "Accounting Integration", name: "QuickBooks Online", description: "Native OAuth integration imports existing clients directly from QuickBooks, removing manual re-entry when a practice onboards onto Compito.", accent: "emerald" },
     { badge: "Rt", category: "Real-Time & Reporting", name: "SignalR & Power BI", description: "SignalR delivers real-time updates across the workspace, while embedded Power BI reporting and Companies House lookups extend the platform beyond core practice data.", accent: "violet" },
   ],
+  designProcess: [
+    {
+      stage: "Design in Figma",
+      description: "Every module starts as a high-fidelity Figma file — real states, real edge cases, not just the happy path.",
+      projectDetail: "Designed end-to-end UI/UX for 6 modules — Client Portal, Document Library, Time Tracking Report, User Management, Template Library and Global Search — before a line of Angular code was written.",
+    },
+    {
+      stage: "Map to the Design System",
+      description: "Every Figma component maps one-to-one to a real, typed UI component — no variant exists in the design file that doesn't exist in code.",
+      projectDetail: "Configured PrimeUIX theme presets so PrimeNG components picked up the same design tokens Material screens were still using, keeping the system consistent mid-migration.",
+    },
+    {
+      stage: "Build & Implement",
+      description: "Standalone components, typed inputs, and a lazy-loaded module structure — engineering discipline that matches the design discipline.",
+      projectDetail: "Led the Angular 16 → 22 upgrade, adopting standalone components, the new control flow syntax and OnPush change detection throughout the workspace.",
+    },
+    {
+      stage: "Accessibility & Responsive QA",
+      description: "Keyboard navigation, focus order and contrast get verified against the real component, not just checked in the design file.",
+      projectDetail: "Built the global search feature with full keyboard navigation and session-based search history, and rebuilt the stylesheet on a 7-1 SCSS architecture to keep theming consistent and accessible.",
+    },
+    {
+      stage: "Ship to Production",
+      description: "An environment-based build pipeline and staged rollout, so new modules reach real practices without disruption.",
+      projectDetail: "Shipped through dev/qa/uat/prod environments as part of firm-wide rollout, with a light/dark mode toggle service backed by Local Storage for a consistent theming experience.",
+    },
+  ],
+  mockup: {
+    title: "Client Portal — Practice Workspace",
+    description:
+      "An illustrative layout of the client-facing workspace: practice navigation on the left, engagement KPIs and a live client list on the right.",
+    navItems: ["Clients", "Projects", "Time Tracking", "Documents", "Templates", "Reports"],
+    columns: ["Client", "Engagement", "Owner", "Status"],
+    rowCount: 6,
+    stats: [
+      { label: "Active Clients", value: "128" },
+      { label: "Open Projects", value: "342" },
+      { label: "Hours Logged", value: "1.2k" },
+      { label: "Pending Approval", value: "18" },
+    ],
+  },
   snapshot: {
     fields: [
       { label: "Industry", value: "Professional Services (Accounting)" },

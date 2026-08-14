@@ -26,6 +26,7 @@ export function HomePage() {
           { href: "#skills", label: "Skills" },
           { href: "#experience", label: "Experience" },
           { href: "#projects", label: "Work" },
+          { href: "#writing", label: "Writing" },
           { href: "#contact", label: "Contact" },
         ]}
       />

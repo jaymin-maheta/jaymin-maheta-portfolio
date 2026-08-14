@@ -12,12 +12,10 @@ export function MetricsGrid({ metrics }: { metrics: MetricCard[] }) {
             className="theme-transition relative overflow-hidden rounded-2xl border border-border-light bg-bg-surface p-5 shadow-[var(--shadow-md)] sm:p-6"
           >
             <span
-              className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-${metric.gradientFrom} to-${metric.gradientTo}`}
+              className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent-500 to-accent-300"
               aria-hidden="true"
             />
-            <div
-              className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-${metric.gradientFrom} to-${metric.gradientTo} text-white shadow-md`}
-            >
+            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-800 to-primary-950 text-white shadow-md">
               <Icon name={metric.icon} className="h-5 w-5" />
             </div>
             <div className="mb-1.5 break-words text-xl font-extrabold leading-tight tracking-tight text-text-heading sm:text-2xl">

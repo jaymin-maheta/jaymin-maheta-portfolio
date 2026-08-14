@@ -76,6 +76,28 @@ export interface TechStackCard {
   accent: "sky" | "orange" | "emerald" | "violet";
 }
 
+export interface DesignProcessStep {
+  /** Stage name, e.g. "Design in Figma" — shared across all case studies */
+  stage: string;
+  /** What that stage means in general, one sentence */
+  description: string;
+  /** How that stage played out specifically on this project */
+  projectDetail: string;
+}
+
+export interface MockupPanel {
+  title: string;
+  description: string;
+  /** Section labels rendered as an illustrative sidebar/nav in the mockup */
+  navItems: string[];
+  /** Column headers for the illustrative data table/list */
+  columns: string[];
+  /** Number of placeholder rows to render (visual rhythm only) */
+  rowCount: number;
+  /** Small stat labels shown above the table, e.g. "128 Active Clients" */
+  stats: { label: string; value: string }[];
+}
+
 export interface SnapshotContent {
   fields: { label: string; value: string }[];
   capabilities: string[];
@@ -96,5 +118,7 @@ export interface CaseStudyData {
   approachIntro: string;
   approach: ApproachStep[];
   techStack: TechStackCard[];
+  designProcess: DesignProcessStep[];
+  mockup: MockupPanel;
   snapshot: SnapshotContent;
 }
