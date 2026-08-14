@@ -2,7 +2,6 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { DeferredHeroBackground } from "../../home/components/DeferredHeroBackground";
-import { SpotlightLayer } from "../../../shared/components/SpotlightLayer";
 import type { HeroContent } from "../types";
 
 export function CaseStudyHero({ hero }: { hero: HeroContent }) {
@@ -22,7 +21,6 @@ export function CaseStudyHero({ hero }: { hero: HeroContent }) {
       className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 px-5 pb-20 pt-10 text-white sm:px-8 sm:pb-24 sm:pt-12 md:px-12 md:pb-28 md:pt-14 lg:px-16"
     >
       <DeferredHeroBackground />
-      <SpotlightLayer />
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 mx-auto max-w-7xl">
         <motion.div
           initial={initial}

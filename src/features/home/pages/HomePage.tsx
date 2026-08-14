@@ -31,7 +31,6 @@ export function HomePage() {
   return (
     <Layout>
       <Navbar
-        eyebrow="Portfolio"
         title="Jaymin Maheta"
         sections={[
           { href: "#gallery", label: "Gallery" },
@@ -62,8 +61,8 @@ export function HomePage() {
           <SectionDivider index={5} label="Writing" />
           <BlogSection />
           <SectionDivider index={6} label="Contact" />
-          <ContactSection />
         </div>
+        <ContactSection />
       </main>
       <Footer />
     </Layout>

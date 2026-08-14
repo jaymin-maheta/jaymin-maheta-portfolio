@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "../../../shared/components/Layout";
 import { Navbar } from "../../../shared/components/Navbar";
-import { Footer } from "../../../shared/components/Footer";
+import { DarkFooter } from "../../../shared/components/DarkFooter";
 import { loadBlogPostBySlug } from "../repository";
 import { BlogPostHero } from "../components/BlogPostHero";
 import { BlogPostBody } from "../components/BlogPostBody";
@@ -53,12 +53,12 @@ export function BlogPostPage() {
 
   return (
     <Layout>
-      <Navbar eyebrow="Writing" title="Jaymin Maheta" />
+      <Navbar title="Jaymin Maheta" />
       <main id="main-content">
         <BlogPostHero meta={post.meta} />
         <BlogPostBody post={post} />
       </main>
-      <Footer />
+      <DarkFooter />
     </Layout>
   );
 }

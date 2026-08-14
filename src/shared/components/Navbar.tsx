@@ -10,13 +10,12 @@ interface NavSection {
 
 interface NavbarProps {
   shortName?: string;
-  eyebrow: string;
   title: string;
   switcher?: ReactNode;
   sections?: NavSection[];
 }
 
-export function Navbar({ shortName, eyebrow, title, switcher, sections }: NavbarProps) {
+export function Navbar({ shortName, title, switcher, sections }: NavbarProps) {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 220, damping: 32, mass: 0.3 });
@@ -40,9 +39,6 @@ export function Navbar({ shortName, eyebrow, title, switcher, sections }: Navbar
             </Link>
           )}
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
-              {eyebrow}
-            </p>
             <p className="truncate font-display text-base font-semibold leading-tight text-text-heading sm:text-lg">
               {title}
             </p>

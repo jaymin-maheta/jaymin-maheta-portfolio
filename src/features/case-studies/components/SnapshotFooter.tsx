@@ -1,11 +1,13 @@
 import { Reveal } from "../../../shared/components/Reveal";
 import { RevealGroup, RevealItem } from "../../../shared/components/RevealGroup";
+import { RibbonBackground } from "../../../shared/components/RibbonBackground";
 import type { SnapshotContent } from "../types";
 
 export function SnapshotFooter({ snapshot }: { snapshot: SnapshotContent }) {
   return (
-    <Reveal className="grid grid-cols-1 gap-8 rounded-[20px] bg-gradient-to-br from-primary-navy to-slate-800 p-7 text-white sm:p-10 lg:grid-cols-[1fr_2fr] lg:gap-10 lg:p-12">
-      <div>
+    <Reveal className="relative grid grid-cols-1 gap-8 overflow-hidden rounded-[20px] bg-primary-950 p-7 text-white sm:p-10 lg:grid-cols-[1fr_2fr] lg:gap-10 lg:p-12">
+      <RibbonBackground />
+      <div className="relative z-10">
         <h2 className="mb-6 text-[15px] font-extrabold uppercase tracking-wider text-brand-gold sm:text-base">Project Snapshot</h2>
         <RevealGroup className="flex flex-col gap-4">
           {snapshot.fields.map((field, i) => (
@@ -16,7 +18,7 @@ export function SnapshotFooter({ snapshot }: { snapshot: SnapshotContent }) {
           ))}
         </RevealGroup>
       </div>
-      <div>
+      <div className="relative z-10">
         <h2 className="mb-6 text-[15px] font-extrabold uppercase tracking-wider text-brand-gold sm:text-base">Capabilities Delivered</h2>
         <RevealGroup className="flex flex-wrap gap-3">
           {snapshot.capabilities.map((cap, i) => (

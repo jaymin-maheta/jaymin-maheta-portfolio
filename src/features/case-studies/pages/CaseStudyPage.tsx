@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "../../../shared/components/Layout";
 import { Navbar } from "../../../shared/components/Navbar";
-import { Footer } from "../../../shared/components/Footer";
+import { DarkFooter } from "../../../shared/components/DarkFooter";
 import { ProjectSwitcher } from "../../../shared/components/ProjectSwitcher";
 import { getAllCaseStudies, loadCaseStudyBySlug } from "../repository";
 import { MetaBadges } from "../components/MetaBadges";
@@ -67,8 +67,6 @@ export function CaseStudyPage() {
   return (
     <Layout>
       <Navbar
-        shortName={data.meta.shortName}
-        eyebrow="Project Case Study"
         title={data.meta.title}
         switcher={<ProjectSwitcher projects={allProjects} activeSlug={data.meta.slug} />}
       />
@@ -76,7 +74,7 @@ export function CaseStudyPage() {
         <MetaBadges meta={data.meta} />
         <CaseStudyHero hero={data.hero} />
         <MetricsGrid metrics={data.metrics} />
-        <div className="relative z-10 mx-auto max-w-7xl content-auto px-5 pb-14 pt-12 sm:px-8 sm:pb-16 sm:pt-14 md:px-12 md:pb-20 md:pt-16 lg:px-16">
+        <div className="relative z-10 mx-auto max-w-7xl content-auto px-5 pb-4 pt-12 sm:px-8 sm:pb-5 sm:pt-14 md:px-12 md:pb-6 md:pt-16 lg:px-16">
           <FlowDiagram title={data.flowTitle} subtitle={data.flowSubtitle} steps={data.flow} />
           <UIMockupPanel mockup={data.mockup} />
           <AboutAndChallenge about={data.about} challenge={data.challenge} />
@@ -92,7 +90,7 @@ export function CaseStudyPage() {
           <SnapshotFooter snapshot={data.snapshot} />
         </div>
       </main>
-      <Footer />
+      <DarkFooter />
     </Layout>
   );
 }
