@@ -30,4 +30,49 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/angular-material-to-primeng</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/scss-architecture-that-survives-teams</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/design-then-build</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/designing-dense-data-tables</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/multi-brand-theming-system</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/designing-states-people-trust</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/typography-for-dense-dashboards</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/dark-mode-as-design-system</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaymin-maheta.github.io/jaymin-maheta-portfolio/blog/designing-bi-dashboard-widgets</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
