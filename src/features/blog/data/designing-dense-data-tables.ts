@@ -9,10 +9,6 @@ export const designingDenseDataTables: BlogPost = {
     tag: "UI/UX Design",
     readTime: "7 min",
     publishedLabel: "Field notes",
-    seoTitle: "Designing Data Tables That Don't Overwhelm Users",
-    seoDescription:
-      "How to keep a 40+ column table usable, from a hospital MIS, a care-home roster and a distribution ERP.",
-    seoKeywords: "designing dense data tables ux, enterprise data table design, ux for complex dashboards",
   },
   intro:
     "On BMC, a hospital management system, the MIS reporting module alone has 40+ report screens, most of them tables. On Valyxto, a distribution ERP, almost every transactional screen is a server-side-paginated list. When the product is fundamentally operational, the table isn't a supporting component — it's the interface. Designing one that a billing clerk or warehouse manager can actually work in for eight hours is a different discipline than designing a marketing site's feature comparison table.",
