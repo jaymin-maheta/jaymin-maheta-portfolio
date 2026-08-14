@@ -44,7 +44,11 @@ export function SplitText({ children, as: Tag = "span", className, id, delay = 0
       aria-label={children}
     >
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-bottom" aria-hidden="true">
+        <span
+          key={i}
+          className="inline-block overflow-hidden pb-[0.12em] align-bottom mr-[0.28em] last:mr-0"
+          aria-hidden="true"
+        >
           <motion.span
             className="inline-block will-change-transform"
             variants={{
@@ -53,7 +57,6 @@ export function SplitText({ children, as: Tag = "span", className, id, delay = 0
             }}
           >
             {word}
-            {i < words.length - 1 ? " " : ""}
           </motion.span>
         </span>
       ))}

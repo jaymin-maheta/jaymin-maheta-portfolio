@@ -12,12 +12,11 @@ interface NavbarProps {
   shortName?: string;
   eyebrow: string;
   title: string;
-  homeLink?: { href: string; label: string };
   switcher?: ReactNode;
   sections?: NavSection[];
 }
 
-export function Navbar({ shortName, eyebrow, title, homeLink, switcher, sections }: NavbarProps) {
+export function Navbar({ shortName, eyebrow, title, switcher, sections }: NavbarProps) {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 220, damping: 32, mass: 0.3 });
@@ -41,27 +40,6 @@ export function Navbar({ shortName, eyebrow, title, homeLink, switcher, sections
             </Link>
           )}
           <div className="min-w-0">
-            {homeLink && (
-              <Link
-                to={homeLink.href}
-                className="group mb-1 inline-flex items-center gap-1.5 rounded-full border border-border-strong bg-bg-surface-alt px-3 py-1 text-[12px] font-semibold text-text-body transition hover:-translate-x-0.5 hover:border-brand-blue hover:text-brand-blue focus-visible:outline-offset-2"
-              >
-                <svg
-                  className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-x-0.5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.25"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <line x1="19" y1="12" x2="5" y2="12" />
-                  <polyline points="12 19 5 12 12 5" />
-                </svg>
-                {homeLink.label}
-              </Link>
-            )}
             <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
               {eyebrow}
             </p>

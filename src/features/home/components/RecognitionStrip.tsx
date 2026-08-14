@@ -1,27 +1,53 @@
 import { RevealGroup, RevealItem } from "../../../shared/components/RevealGroup";
 
 const RECOGNITIONS = [
-  "Spotlight Award (Dec 2024) — outstanding project contributions",
-  "HDFC Gift Voucher (Jul 2024) — outstanding project contributions",
-  "Spotlight Award (Apr 2024) — Amazon Gift Voucher for project contributions",
-  "Client Appreciation — successful production delivery and teamwork",
-  "Tech Titans Recognition — UI design, prototyping and frontend delivery",
+  {
+    title: "Spotlight Award",
+    detail: "Outstanding project contributions",
+    date: "Dec 2024",
+  },
+  {
+    title: "HDFC Gift Voucher",
+    detail: "Outstanding project contributions",
+    date: "Jul 2024",
+  },
+  {
+    title: "Spotlight Award",
+    detail: "Amazon Gift Voucher for project contributions",
+    date: "Apr 2024",
+  },
+  {
+    title: "Client Appreciation",
+    detail: "Successful production delivery and teamwork",
+    date: null,
+  },
+  {
+    title: "Tech Titans Recognition",
+    detail: "UI design, prototyping and frontend delivery",
+    date: null,
+  },
 ];
 
 export function RecognitionStrip() {
   return (
     <section aria-label="Recognition" className="mb-12 md:mb-16">
-      <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
-        Recognition
-      </p>
-      <RevealGroup className="flex flex-wrap gap-2.5">
-        {RECOGNITIONS.map((text, i) => (
+      <div className="mb-5 flex items-baseline justify-between gap-4">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
+          Recognition
+        </p>
+        <p className="text-[12px] font-medium text-text-subtle">{RECOGNITIONS.length} awards &amp; mentions</p>
+      </div>
+
+      <RevealGroup className="theme-transition overflow-hidden rounded-2xl border border-amber-300/50 bg-amber-50/60 dark:border-amber-700/40 dark:bg-amber-500/6">
+        {RECOGNITIONS.map((item, i) => (
           <RevealItem
-            key={i}
-            className="theme-transition inline-flex cursor-default items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/90 px-3.5 py-1.5 text-[12.5px] font-medium text-amber-900 transition-transform duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-amber-900/10 dark:border-amber-800/60 dark:bg-amber-950/50 dark:text-amber-200"
+            key={item.title + i}
+            className={`group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-amber-100/50 dark:hover:bg-amber-500/9 sm:px-6 ${
+              i !== RECOGNITIONS.length - 1 ? "border-b border-amber-300/40 dark:border-amber-700/30" : ""
+            }`}
           >
             <svg
-              className="h-3.5 w-3.5 shrink-0 text-amber-600 dark:text-amber-400"
+              className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -33,7 +59,19 @@ export function RecognitionStrip() {
               <circle cx="12" cy="8" r="6" />
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
             </svg>
-            {text}
+
+            <div className="min-w-0 flex-1">
+              <p className="font-display text-[14.5px] font-semibold leading-snug text-text-heading sm:text-[15px]">
+                {item.title}
+              </p>
+              <p className="mt-0.5 text-[13px] leading-snug text-text-muted">{item.detail}</p>
+            </div>
+
+            {item.date && (
+              <span className="shrink-0 text-[12px] font-medium tabular-nums text-text-subtle">
+                {item.date}
+              </span>
+            )}
           </RevealItem>
         ))}
       </RevealGroup>

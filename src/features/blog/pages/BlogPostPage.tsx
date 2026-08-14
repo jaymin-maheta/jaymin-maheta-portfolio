@@ -53,11 +53,7 @@ export function BlogPostPage() {
 
   return (
     <Layout>
-      <Navbar
-        eyebrow="Writing"
-        title="Jaymin Maheta"
-        homeLink={{ href: "/", label: "Back to Portfolio" }}
-      />
+      <Navbar eyebrow="Writing" title="Jaymin Maheta" />
       <main id="main-content">
         <BlogPostHero meta={post.meta} />
         <BlogPostBody post={post} />

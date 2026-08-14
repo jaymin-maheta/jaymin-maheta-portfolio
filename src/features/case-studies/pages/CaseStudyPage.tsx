@@ -70,7 +70,6 @@ export function CaseStudyPage() {
         shortName={data.meta.shortName}
         eyebrow="Project Case Study"
         title={data.meta.title}
-        homeLink={{ href: "/", label: "Back to Portfolio" }}
         switcher={<ProjectSwitcher projects={allProjects} activeSlug={data.meta.slug} />}
       />
       <main id="main-content">

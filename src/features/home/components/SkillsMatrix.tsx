@@ -1,6 +1,5 @@
 import { useState, useMemo, useId } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Reveal } from "../../../shared/components/Reveal";
 import { SplitText } from "../../../shared/components/SplitText";
 
 type Category = "All" | "Design" | "Frontend" | "UI Libraries" | "Styling" | "Charts" | "Tooling";
@@ -78,16 +77,21 @@ export function SkillsMatrix() {
       <SplitText
         as="h2"
         id="skills-heading"
+        loop={false}
         className="mb-3 block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
       >
         An expertise matrix, not a progress bar.
       </SplitText>
-      <Reveal>
-        <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-text-muted sm:text-base">
-          Filter by category to see where I go deep. Depth reflects years of hands-on production
-          use, not a self-rated percentage.
-        </p>
-      </Reveal>
+      <motion.p
+        initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-8 max-w-2xl text-[15px] leading-relaxed text-text-muted sm:text-base"
+      >
+        Filter by category to see where I go deep. Depth reflects years of hands-on production
+        use, not a self-rated percentage.
+      </motion.p>
 
       <div
         role="tablist"
@@ -128,7 +132,7 @@ export function SkillsMatrix() {
             layout={!reduceMotion}
             initial={reduceMotion ? false : { opacity: 0, scale: 0.94, y: 14 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: false, margin: "0px 0px -33% 0px" }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{
               duration: 0.4,

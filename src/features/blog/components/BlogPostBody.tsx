@@ -4,7 +4,7 @@ import type { BlogPost } from "../types";
 
 export function BlogPostBody({ post }: { post: BlogPost }) {
   return (
-    <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+    <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16">
       <Reveal>
         <p className="text-[17px] leading-relaxed text-text-body sm:text-lg">{post.intro}</p>
       </Reveal>

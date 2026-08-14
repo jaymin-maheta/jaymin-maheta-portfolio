@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { CustomCursor } from "./CustomCursor";
+import { ScrollToTopButton } from "./ScrollToTopButton";
 
 export function Layout({ children }: { children: ReactNode }) {
   const location = useLocation();
@@ -26,6 +27,7 @@ export function Layout({ children }: { children: ReactNode }) {
       >
         {children}
       </motion.div>
+      <ScrollToTopButton />
     </div>
   );
 }

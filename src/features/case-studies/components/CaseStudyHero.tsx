@@ -1,5 +1,6 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { DeferredHeroBackground } from "../../home/components/DeferredHeroBackground";
 import { SpotlightLayer } from "../../../shared/components/SpotlightLayer";
 import type { HeroContent } from "../types";
@@ -23,6 +24,31 @@ export function CaseStudyHero({ hero }: { hero: HeroContent }) {
       <DeferredHeroBackground />
       <SpotlightLayer />
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 mx-auto max-w-7xl">
+        <motion.div
+          initial={initial}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...t, delay: 0.02 }}
+        >
+          <Link
+            to="/"
+            className="group mb-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[12px] font-semibold text-white/80 backdrop-blur-sm transition hover:-translate-x-0.5 hover:border-white/40 hover:text-white focus-visible:outline-offset-2"
+          >
+            <svg
+              className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-x-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            Back to Portfolio
+          </Link>
+        </motion.div>
         <motion.span
           initial={initial}
           animate={{ opacity: 1, y: 0 }}
