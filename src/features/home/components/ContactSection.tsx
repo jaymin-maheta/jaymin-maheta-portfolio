@@ -21,7 +21,7 @@ export function ContactSection() {
       <div className="relative z-10 mx-auto max-w-2xl text-center">
         <Reveal>
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/6 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-200">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent-400 shadow-[0_0_8px_2px_rgba(253,157,39,0.55)]" aria-hidden="true" />
+            <span className="h-1.5 w-1.5 rounded-full bg-accent-400 shadow-[0_0_8px_2px_rgba(24,226,153,0.55)]" aria-hidden="true" />
             Available for senior roles &amp; consulting
           </span>
         </Reveal>

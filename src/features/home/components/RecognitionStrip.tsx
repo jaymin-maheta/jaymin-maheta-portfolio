@@ -38,16 +38,16 @@ export function RecognitionStrip() {
         <p className="text-[12px] font-medium text-text-subtle">{RECOGNITIONS.length} awards &amp; mentions</p>
       </div>
 
-      <RevealGroup className="theme-transition overflow-hidden rounded-2xl border border-amber-300/50 bg-amber-50/60 dark:border-amber-700/40 dark:bg-amber-500/6">
+      <RevealGroup className="theme-transition overflow-hidden rounded-2xl border border-accent-300/50 bg-accent-50/60 dark:border-accent-700/40 dark:bg-accent-500/6">
         {RECOGNITIONS.map((item, i) => (
           <RevealItem
             key={item.title + i}
-            className={`group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-amber-100/50 dark:hover:bg-amber-500/9 sm:px-6 ${
-              i !== RECOGNITIONS.length - 1 ? "border-b border-amber-300/40 dark:border-amber-700/30" : ""
+            className={`group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-accent-100/50 dark:hover:bg-accent-500/9 sm:px-6 ${
+              i !== RECOGNITIONS.length - 1 ? "border-b border-accent-300/40 dark:border-accent-700/30" : ""
             }`}
           >
             <svg
-              className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400"
+              className="h-4 w-4 shrink-0 text-accent-600 dark:text-accent-400"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"

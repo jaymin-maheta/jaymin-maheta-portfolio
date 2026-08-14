@@ -113,7 +113,7 @@ export function CustomCursor() {
           height: variant === "link" ? 64 : variant === "text" ? 48 : 32,
           scale: pressed ? 0.82 : 1,
           backgroundColor:
-            variant === "link" ? "rgba(253,157,39,0.12)" : variant === "text" ? "rgba(253,157,39,0.06)" : "transparent",
+            variant === "link" ? "rgba(24,226,153,0.12)" : variant === "text" ? "rgba(24,226,153,0.06)" : "transparent",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 24 }}
       >

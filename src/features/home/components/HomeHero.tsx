@@ -2,7 +2,6 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { useRef } from "react";
 import { DeferredHeroBackground } from "./DeferredHeroBackground";
 import { MagneticLink } from "../../../shared/components/MagneticLink";
-import { SpotlightLayer } from "../../../shared/components/SpotlightLayer";
 import { SplitText } from "../../../shared/components/SplitText";
 
 export function HomeHero() {
@@ -20,10 +19,9 @@ export function HomeHero() {
       id="top"
       ref={sectionRef}
       aria-label="Introduction"
-      className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 px-5 py-16 text-white sm:px-8 sm:py-20 md:px-12 md:py-24 lg:px-16"
+      className="relative overflow-hidden bg-primary-950 px-5 py-16 text-white sm:px-8 sm:py-20 md:px-12 md:py-24 lg:px-16"
     >
       <DeferredHeroBackground />
-      <SpotlightLayer />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
@@ -37,7 +35,7 @@ export function HomeHero() {
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/6 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-200 backdrop-blur-sm"
           >
             <span
-              className="h-1.5 w-1.5 rounded-full bg-accent-400 shadow-[0_0_8px_2px_rgba(253,157,39,0.55)]"
+              className="h-1.5 w-1.5 rounded-full bg-accent-400 shadow-[0_0_8px_2px_rgba(24,226,153,0.55)]"
               aria-hidden="true"
             />
             Available for senior roles &amp; consulting

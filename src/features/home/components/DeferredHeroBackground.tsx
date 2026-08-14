@@ -1,8 +1,8 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 
-const HeroBackground = lazy(() =>
-  import("../../../shared/components/HeroBackground").then((m) => ({
-    default: m.HeroBackground,
+const RibbonBackground = lazy(() =>
+  import("../../../shared/components/RibbonBackground").then((m) => ({
+    default: m.RibbonBackground,
   }))
 );
 
@@ -54,7 +54,7 @@ export function DeferredHeroBackground() {
 
   return (
     <Suspense fallback={null}>
-      <HeroBackground />
+      <RibbonBackground />
     </Suspense>
   );
 }
