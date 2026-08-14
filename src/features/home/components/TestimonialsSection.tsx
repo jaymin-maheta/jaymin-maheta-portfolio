@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Reveal } from "../../../shared/components/Reveal";
+import { SplitText } from "../../../shared/components/SplitText";
 
 interface Testimonial {
   quote: string;
@@ -50,14 +50,13 @@ export function TestimonialsSection() {
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
             What People Say
           </p>
-          <Reveal>
-            <h2
-              id="testimonials-heading"
-              className="text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
-            >
-              Feedback from clients and teams.
-            </h2>
-          </Reveal>
+          <SplitText
+            as="h2"
+            id="testimonials-heading"
+            className="block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
+          >
+            Feedback from clients and teams.
+          </SplitText>
         </div>
         <span className="rounded-full border border-dashed border-border-strong bg-bg-surface-alt px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-text-subtle">
           Sample content — placeholder

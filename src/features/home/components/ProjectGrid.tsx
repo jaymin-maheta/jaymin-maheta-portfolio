@@ -1,5 +1,7 @@
 import { memo } from "react";
 import { RevealGroup, RevealItem } from "../../../shared/components/RevealGroup";
+import { Reveal } from "../../../shared/components/Reveal";
+import { SplitText } from "../../../shared/components/SplitText";
 import { ProjectCard } from "./ProjectCard";
 import type { CaseStudyMeta } from "../../case-studies/types";
 
@@ -42,15 +44,20 @@ function ProjectGridComponent({ projects }: { projects: CaseStudyMeta[] }) {
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
         Selected Work
       </p>
-      <h2
+      <SplitText
+        as="h2"
         id="projects-heading"
-        className="mb-3 text-2xl font-extrabold tracking-tight text-text-heading sm:text-3xl"
+        className="mb-3 block text-2xl font-extrabold tracking-tight text-text-heading sm:text-3xl"
       >
         Project Case Studies
-      </h2>
-      <p className="mb-10 max-w-2xl text-[15px] leading-relaxed text-text-muted sm:text-base">
-        Five enterprise applications spanning practice management, distribution ERP, hospital operations, feed manufacturing and workforce rostering — each page covers the product, the architecture and exactly what I personally built.
-      </p>
+      </SplitText>
+      <Reveal>
+        <p className="mb-10 max-w-2xl text-[15px] leading-relaxed text-text-muted sm:text-base">
+          Five enterprise applications spanning practice management, distribution ERP, hospital
+          operations, feed manufacturing and workforce rostering — each page covers the product,
+          the architecture and exactly what I personally built.
+        </p>
+      </Reveal>
       <RevealGroup className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => {
           const summary = SUMMARIES[project.slug];

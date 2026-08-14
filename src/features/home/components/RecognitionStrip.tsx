@@ -18,7 +18,7 @@ export function RecognitionStrip() {
         {RECOGNITIONS.map((text, i) => (
           <RevealItem
             key={i}
-            className="theme-transition inline-flex items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/90 px-3.5 py-1.5 text-[12.5px] font-medium text-amber-900 dark:border-amber-800/60 dark:bg-amber-950/50 dark:text-amber-200"
+            className="theme-transition inline-flex cursor-default items-center gap-2 rounded-full border border-amber-200/80 bg-amber-50/90 px-3.5 py-1.5 text-[12.5px] font-medium text-amber-900 transition-transform duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md hover:shadow-amber-900/10 dark:border-amber-800/60 dark:bg-amber-950/50 dark:text-amber-200"
           >
             <svg
               className="h-3.5 w-3.5 shrink-0 text-amber-600 dark:text-amber-400"

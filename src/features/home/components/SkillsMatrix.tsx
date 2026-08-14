@@ -1,6 +1,7 @@
 import { useState, useMemo, useId } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "../../../shared/components/Reveal";
+import { SplitText } from "../../../shared/components/SplitText";
 
 type Category = "All" | "Design" | "Frontend" | "UI Libraries" | "Styling" | "Charts" | "Tooling";
 
@@ -74,13 +75,14 @@ export function SkillsMatrix() {
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
         Capabilities
       </p>
+      <SplitText
+        as="h2"
+        id="skills-heading"
+        className="mb-3 block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
+      >
+        An expertise matrix, not a progress bar.
+      </SplitText>
       <Reveal>
-        <h2
-          id="skills-heading"
-          className="mb-3 text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
-        >
-          An expertise matrix, not a progress bar.
-        </h2>
         <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-text-muted sm:text-base">
           Filter by category to see where I go deep. Depth reflects years of hands-on production
           use, not a self-rated percentage.
@@ -120,14 +122,19 @@ export function SkillsMatrix() {
         layout={!reduceMotion}
         className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3"
       >
-        {filtered.map((skill) => (
+        {filtered.map((skill, i) => (
           <motion.li
             key={skill.name}
             layout={!reduceMotion}
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={reduceMotion ? false : { opacity: 0, scale: 0.94, y: 14 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, margin: "0px 0px -33% 0px" }}
             exit={{ opacity: 0, scale: 0.96 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.4,
+              ease: [0.16, 1, 0.3, 1],
+              delay: reduceMotion ? 0 : (i % 3) * 0.08,
+            }}
             className="theme-transition flex items-center justify-between gap-3 rounded-xl border border-border-light bg-bg-surface-alt px-4 py-3"
           >
             <span className="text-[14px] font-medium text-text-heading">{skill.name}</span>

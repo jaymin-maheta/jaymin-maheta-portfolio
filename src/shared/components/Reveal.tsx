@@ -22,7 +22,7 @@ export function Reveal({ direction = "up", className, children }: RevealProps) {
       className={className}
       initial={reduceMotion ? false : { opacity: 0, x: offset.x, y: offset.y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: false, margin: "0px 0px -33% 0px" }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
     >
       {children}

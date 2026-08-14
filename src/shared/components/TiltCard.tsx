@@ -7,6 +7,8 @@ interface TiltCardProps {
   to: string;
   className?: string;
   children: ReactNode;
+  /** Shown by CustomCursor when hovering this card on desktop. */
+  cursorLabel?: string;
 }
 
 const SPRING = { stiffness: 300, damping: 22, mass: 0.6 };
@@ -16,7 +18,7 @@ function supportsHoverTilt(): boolean {
   return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 }
 
-export function TiltCard({ to, className, children }: TiltCardProps) {
+export function TiltCard({ to, className, children, cursorLabel }: TiltCardProps) {
   const navigate = useNavigate();
   const reduceMotion = useReducedMotion();
   const [canTilt] = useState(supportsHoverTilt);
@@ -57,6 +59,7 @@ export function TiltCard({ to, className, children }: TiltCardProps) {
     <motion.a
       href={to}
       className={className}
+      data-cursor-label={cursorLabel}
       style={
         canTilt && !reduceMotion
           ? {

@@ -8,6 +8,8 @@ interface MagneticLinkProps {
   download?: boolean;
   target?: string;
   rel?: string;
+  /** Shown by CustomCursor when hovering this link on desktop. */
+  cursorLabel?: string;
 }
 
 const SPRING = { stiffness: 260, damping: 18, mass: 0.4 };
@@ -19,7 +21,7 @@ function supportsHoverPointer(): boolean {
   return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 }
 
-export function MagneticLink({ href, className, children, download, target, rel }: MagneticLinkProps) {
+export function MagneticLink({ href, className, children, download, target, rel, cursorLabel }: MagneticLinkProps) {
   const reduceMotion = useReducedMotion();
   const [canPull] = useState(supportsHoverPointer);
   const x = useMotionValue(0);
@@ -51,6 +53,7 @@ export function MagneticLink({ href, className, children, download, target, rel 
       download={download}
       target={target}
       rel={rel}
+      data-cursor-label={cursorLabel}
       style={canPull && !reduceMotion ? { x: springX, y: springY } : undefined}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}

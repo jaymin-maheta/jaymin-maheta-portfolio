@@ -1,5 +1,6 @@
 import { Reveal } from "../../../shared/components/Reveal";
 import { RevealGroup, RevealItem } from "../../../shared/components/RevealGroup";
+import { SplitText } from "../../../shared/components/SplitText";
 import { TiltCard } from "../../../shared/components/TiltCard";
 import { getAllBlogPosts } from "../../blog/repository";
 
@@ -11,13 +12,14 @@ export function BlogSection() {
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
         Writing
       </p>
+      <SplitText
+        as="h2"
+        id="writing-heading"
+        className="mb-3 block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
+      >
+        Notes on engineering and design systems.
+      </SplitText>
       <Reveal>
-        <h2
-          id="writing-heading"
-          className="mb-3 text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
-        >
-          Notes on engineering and design systems.
-        </h2>
         <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-text-muted sm:text-base">
           Field notes from real migrations, architecture decisions and the design-to-code work
           behind the projects above.
@@ -29,6 +31,7 @@ export function BlogSection() {
           <RevealItem key={post.slug} className="contents">
             <TiltCard
               to={`/blog/${post.slug}`}
+              cursorLabel="Read"
               className="group theme-transition flex h-full flex-col rounded-2xl border border-border-light bg-bg-surface p-5 shadow-[var(--shadow-sm)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-[var(--shadow-lg)] sm:p-6"
             >
               <div className="mb-4 flex items-center justify-between gap-2">

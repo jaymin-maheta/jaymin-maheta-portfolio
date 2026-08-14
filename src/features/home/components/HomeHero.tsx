@@ -1,34 +1,34 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { DeferredHeroBackground } from "./DeferredHeroBackground";
 import { MagneticLink } from "../../../shared/components/MagneticLink";
 import { SpotlightLayer } from "../../../shared/components/SpotlightLayer";
+import { SplitText } from "../../../shared/components/SplitText";
 
 export function HomeHero() {
   const reduceMotion = useReducedMotion();
   const t = { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const };
   const initial = reduceMotion ? false : { opacity: 0, y: 20 };
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 90]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, reduceMotion ? 1 : 0]);
+
   return (
     <section
       id="top"
+      ref={sectionRef}
       aria-label="Introduction"
       className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 px-5 py-16 text-white sm:px-8 sm:py-20 md:px-12 md:py-24 lg:px-16"
     >
       <DeferredHeroBackground />
       <SpotlightLayer />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[auto_1fr] lg:items-center lg:gap-14">
-        {/* Avatar mark */}
-        <motion.div
-          initial={initial}
-          animate={{ opacity: 1, y: 0 }}
-          transition={t}
-          className="flex h-24 w-24 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/6 font-display text-3xl font-semibold tracking-tight text-white shadow-2xl backdrop-blur-md sm:h-28 sm:w-28 sm:text-4xl"
-          aria-hidden="true"
-        >
-          JM
-        </motion.div>
-
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative z-10 mx-auto max-w-7xl"
+      >
         <div className="min-w-0">
           <motion.span
             initial={initial}
@@ -43,14 +43,14 @@ export function HomeHero() {
             Available for senior roles &amp; consulting
           </motion.span>
 
-          <motion.h1
-            initial={initial}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...t, delay: 0.12 }}
+          <SplitText
+            as="h1"
+            delay={0.16}
+            loop={false}
             className="text-balance font-display text-[2rem] font-semibold leading-[1.1] tracking-tight text-white sm:text-[2.75rem] md:text-[3.4rem]"
           >
             Building scalable digital experiences that drive business growth.
-          </motion.h1>
+          </SplitText>
 
           <motion.p
             initial={initial}
@@ -91,6 +91,7 @@ export function HomeHero() {
           >
             <MagneticLink
               href="#projects"
+              cursorLabel="View"
               className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[13px] font-semibold text-primary-950 shadow-lg transition-colors hover:bg-accent-50 focus-visible:outline-offset-2"
             >
               View Projects
@@ -204,7 +205,30 @@ export function HomeHero() {
             </a>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
+
+      {!reduceMotion && (
+        <a
+          href="#about"
+          aria-label="Scroll to About section"
+          className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-white/40 transition hover:text-white/80 sm:flex"
+        >
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em]">Scroll</span>
+          <svg
+            className="h-4 w-4"
+            style={{ animation: "scroll-cue 1.8s ease-in-out infinite" }}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </a>
+      )}
     </section>
   );
 }

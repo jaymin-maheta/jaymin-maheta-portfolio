@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { DeferredHeroBackground } from "../../home/components/DeferredHeroBackground";
 import { SpotlightLayer } from "../../../shared/components/SpotlightLayer";
 import type { BlogPostMeta } from "../types";
@@ -8,14 +9,20 @@ export function BlogPostHero({ meta }: { meta: BlogPostMeta }) {
   const t = { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const };
   const initial = reduceMotion ? false : { opacity: 0, y: 18 };
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 70]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, reduceMotion ? 1 : 0]);
+
   return (
     <section
+      ref={sectionRef}
       aria-label="Post overview"
       className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 px-5 pb-16 pt-10 text-white sm:px-8 sm:pb-20 sm:pt-12 md:px-12 md:pb-24 md:pt-14 lg:px-16"
     >
       <DeferredHeroBackground />
       <SpotlightLayer />
-      <div className="relative z-10 mx-auto max-w-4xl">
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 mx-auto max-w-4xl">
         <motion.div
           initial={initial}
           animate={{ opacity: 1, y: 0 }}
@@ -45,7 +52,7 @@ export function BlogPostHero({ meta }: { meta: BlogPostMeta }) {
         >
           {meta.excerpt}
         </motion.p>
-      </div>
+      </motion.div>
     </section>
   );
 }

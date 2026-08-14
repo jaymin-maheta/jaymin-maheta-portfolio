@@ -3,12 +3,17 @@ import type { ReactNode } from "react";
 
 const containerVariants: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.14, delayChildren: 0.05 } },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { opacity: 0, y: 22, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 interface RevealGroupProps {
@@ -24,7 +29,7 @@ export function RevealGroup({ className, children }: RevealGroupProps) {
       className={className}
       initial={reduceMotion ? false : "hidden"}
       whileInView="visible"
-      viewport={{ once: true, amount: 0.12 }}
+      viewport={{ once: false, margin: "0px 0px -33% 0px" }}
       variants={reduceMotion ? undefined : containerVariants}
     >
       {children}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "../../../shared/components/Reveal";
+import { SplitText } from "../../../shared/components/SplitText";
 
 interface Role {
   company: string;
@@ -161,13 +162,14 @@ export function ExperienceTimeline() {
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
         Experience
       </p>
+      <SplitText
+        as="h2"
+        id="experience-heading"
+        className="mb-3 block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
+      >
+        Seven years, four companies, one throughline.
+      </SplitText>
       <Reveal>
-        <h2
-          id="experience-heading"
-          className="mb-3 text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
-        >
-          Seven years, four companies, one throughline.
-        </h2>
         <p className="mb-10 max-w-2xl text-[15px] leading-relaxed text-text-muted sm:text-base">
           From frontend developer to Senior UI Engineer — expand a role for responsibilities,
           achievements, and the stack I used.

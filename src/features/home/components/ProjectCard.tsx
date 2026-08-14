@@ -16,6 +16,7 @@ function ProjectCardComponent({ project, index, description, tags }: ProjectCard
   return (
     <TiltCard
       to={`/${project.slug}`}
+      cursorLabel="View"
       className="group theme-transition relative flex flex-col overflow-hidden rounded-2xl border border-border-light bg-bg-surface shadow-[var(--shadow-sm)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-[var(--shadow-xl)]"
     >
       <span

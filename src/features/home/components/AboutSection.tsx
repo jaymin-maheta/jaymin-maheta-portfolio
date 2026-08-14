@@ -1,5 +1,6 @@
 import { Reveal } from "../../../shared/components/Reveal";
 import { RevealGroup, RevealItem } from "../../../shared/components/RevealGroup";
+import { SplitText } from "../../../shared/components/SplitText";
 
 const PRINCIPLES = [
   {
@@ -22,14 +23,13 @@ export function AboutSection() {
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
         About
       </p>
-      <Reveal>
-        <h2
-          id="about-heading"
-          className="mb-6 text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
-        >
-          From pixels in Figma to production code, for seven years.
-        </h2>
-      </Reveal>
+      <SplitText
+        as="h2"
+        id="about-heading"
+        className="mb-6 block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
+      >
+        From pixels in Figma to production code, for seven years.
+      </SplitText>
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
         <Reveal direction="left">
