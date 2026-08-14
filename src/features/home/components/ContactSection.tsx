@@ -23,7 +23,7 @@ export function ContactSection() {
           <Reveal>
             <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-border-light bg-bg-surface-alt px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-600 dark:border-white/15 dark:bg-white/6 dark:text-accent-200">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-400 shadow-[0_0_8px_2px_rgba(24,226,153,0.55)]" aria-hidden="true" />
-              Available for senior roles &amp; consulting
+              Available for remote senior roles &amp; consulting
             </span>
           </Reveal>
 

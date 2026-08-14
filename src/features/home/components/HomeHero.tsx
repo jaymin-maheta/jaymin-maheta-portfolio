@@ -38,7 +38,7 @@ export function HomeHero() {
               className="h-1.5 w-1.5 rounded-full bg-accent-400 shadow-[0_0_8px_2px_rgba(24,226,153,0.55)]"
               aria-hidden="true"
             />
-            Available for senior roles &amp; consulting
+            Available for remote senior roles &amp; consulting
           </motion.span>
 
           <SplitText
