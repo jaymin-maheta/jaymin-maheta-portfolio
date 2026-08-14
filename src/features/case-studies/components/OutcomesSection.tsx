@@ -8,7 +8,7 @@ export function OutcomesSection({ outcomes }: { outcomes: OutcomesContent }) {
     <div className="mb-16 md:mb-20">
       <div className="mb-8 md:mb-10">
         <p className="mb-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-brand-blue">Impact Analysis</p>
-        <h2 className="text-2xl font-extrabold text-text-heading sm:text-3xl">Key Challenges &amp; Outcomes</h2>
+        <h2 className="font-display text-2xl font-semibold text-text-heading sm:text-3xl">Key Challenges &amp; Outcomes</h2>
       </div>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
@@ -18,7 +18,7 @@ export function OutcomesSection({ outcomes }: { outcomes: OutcomesContent }) {
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-[1.5px] border-red-300 bg-red-100 text-red-600 dark:border-red-800 dark:bg-red-950 dark:text-red-400">
               <Icon name="alert-triangle" className="h-6 w-6" />
             </div>
-            <h4 className="text-lg font-extrabold text-text-heading sm:text-xl">Key Challenges Included</h4>
+            <h3 className="text-lg font-extrabold text-text-heading sm:text-xl">Key Challenges Included</h3>
           </div>
           <RevealGroup className="space-y-4">
             {outcomes.challenges.map((text, i) => (
@@ -41,7 +41,7 @@ export function OutcomesSection({ outcomes }: { outcomes: OutcomesContent }) {
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-[1.5px] border-emerald-300 bg-emerald-100 text-emerald-600 dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400">
               <Icon name="check-circle" className="h-6 w-6" />
             </div>
-            <h4 className="text-lg font-extrabold text-text-heading sm:text-xl">Outcomes Delivered</h4>
+            <h3 className="text-lg font-extrabold text-text-heading sm:text-xl">Outcomes Delivered</h3>
           </div>
           <p className="mb-4 text-[14.5px] font-semibold text-text-muted">{outcomes.outcomesIntro}</p>
           <RevealGroup className="space-y-4">

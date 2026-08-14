@@ -10,7 +10,7 @@ export function AboutCard({ about }: { about: InfoPanel }) {
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white shadow-lg shadow-brand-blue/20">
           <Icon name={about.icon} className="h-6 w-6" />
         </div>
-        <h3 className="text-xl font-extrabold text-text-heading sm:text-2xl">{about.title}</h3>
+        <h2 className="font-display text-xl font-semibold text-text-heading sm:text-2xl">{about.title}</h2>
       </div>
       {about.paragraphs.map((p, i) => (
         <p key={i} className="mb-4 text-[15px] leading-relaxed text-text-body last:mb-0">
@@ -32,7 +32,7 @@ export function ChallengeCard({ challenge }: { challenge: ChallengePanel }) {
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-accent to-orange-600 text-white shadow-lg shadow-orange-500/20">
           <Icon name={challenge.icon} className="h-6 w-6" />
         </div>
-        <h3 className="text-xl font-extrabold text-text-heading sm:text-2xl">{challenge.title}</h3>
+        <h2 className="text-xl font-extrabold text-text-heading sm:text-2xl">{challenge.title}</h2>
       </div>
       <p className="mb-4 text-[15px] font-semibold leading-relaxed text-orange-900 dark:text-orange-200">{challenge.emphasisParagraph}</p>
       {challenge.paragraphs.map((p, i) => (

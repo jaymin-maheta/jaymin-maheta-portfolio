@@ -15,11 +15,11 @@ interface FlowLine {
   opacityScale: number;
 }
 
-const PRIMARY_RGB: [number, number, number] = [24, 226, 153]; // #18e299
-const NAVY_RGB: [number, number, number] = [11, 23, 48]; // #0b1730
+const PRIMARY_RGB: [number, number, number] = [253, 157, 39]; // #fd9d27 copper
+const NAVY_RGB: [number, number, number] = [11, 13, 18]; // #0b0d12 ink
 const ACCENT_RGBS: [number, number, number][] = [
-  [249, 115, 22], // orange
-  [192, 132, 252], // violet
+  [255, 184, 79], // amber
+  [201, 209, 218], // cool silver
 ];
 
 function lerp(a: number, b: number, t: number) {
@@ -255,7 +255,7 @@ export function HeroBackground() {
       style={{
         maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 26%, #000 55%)",
         WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 26%, #000 55%)",
-        filter: "drop-shadow(0 0 5px rgba(24,226,153,0.35)) drop-shadow(0 0 14px rgba(24,226,153,0.15))",
+        filter: "drop-shadow(0 0 5px rgba(253,157,39,0.35)) drop-shadow(0 0 14px rgba(253,157,39,0.15))",
       }}
       aria-hidden="true"
     >

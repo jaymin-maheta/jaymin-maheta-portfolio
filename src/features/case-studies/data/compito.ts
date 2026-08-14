@@ -11,6 +11,7 @@ export const compito: CaseStudyData = {
     industry: "Professional Services / Accounting",
     stack: "Angular · PrimeNG · SignalR",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Replaced spreadsheets and inboxes with one system of record for client, project and billable-hour tracking.",
   },
   hero: {
     eyebrow: "Project Case Study",

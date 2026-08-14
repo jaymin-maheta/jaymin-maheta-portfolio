@@ -1,6 +1,7 @@
 import { lazy, Suspense, type ReactNode } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "../features/home/pages/HomePage";
+import { RouteError } from "./RouteError";
 
 // Lazy-load case study & 404 so the home page ships a smaller initial chunk
 const CaseStudyPage = lazy(() =>
@@ -34,9 +35,9 @@ function withSuspense(element: ReactNode) {
 
 export const router = createBrowserRouter(
   [
-    { path: "/", element: <HomePage /> },
-    { path: "/:slug", element: withSuspense(<CaseStudyPage />) },
-    { path: "*", element: withSuspense(<NotFoundPage />) },
+    { path: "/", element: <HomePage />, errorElement: <RouteError /> },
+    { path: "/:slug", element: withSuspense(<CaseStudyPage />), errorElement: <RouteError /> },
+    { path: "*", element: withSuspense(<NotFoundPage />), errorElement: <RouteError /> },
   ],
   { basename: import.meta.env.BASE_URL }
 );

@@ -5,7 +5,7 @@ import type { MetricCard } from "../types";
 export function MetricsGrid({ metrics }: { metrics: MetricCard[] }) {
   return (
     <div className="relative z-10 -mt-12 px-5 sm:-mt-14 sm:px-8 md:px-12 lg:px-16">
-      <RevealGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+      <RevealGroup className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
         {metrics.map((metric, i) => (
           <RevealItem
             key={i}

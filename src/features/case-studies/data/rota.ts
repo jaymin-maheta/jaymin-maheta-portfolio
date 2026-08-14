@@ -11,6 +11,7 @@ export const rota: CaseStudyData = {
     industry: "Workforce Management / UK Care Homes",
     stack: "Angular · PrimeNG · FullCalendar",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Drag-and-drop rostering through time logging to UK-statutory payroll, with live safety-critical coverage.",
   },
   hero: {
     eyebrow: "Project Case Study",

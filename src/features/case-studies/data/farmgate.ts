@@ -11,6 +11,7 @@ export const farmgate: CaseStudyData = {
     industry: "Agriculture / Animal Feed Manufacturing",
     stack: "React · NestJS · MySQL",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "One traceable system from raw-material delivery to sale, with FEFO rotation and live recipe cost roll-up.",
   },
   hero: {
     eyebrow: "Project Case Study",

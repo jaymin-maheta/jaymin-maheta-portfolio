@@ -13,7 +13,7 @@ export function TechStackGrid({ items }: { items: TechStackCard[] }) {
     <div className="mb-16 md:mb-20">
       <div className="mb-8 md:mb-10">
         <p className="mb-2 text-[13px] font-extrabold uppercase tracking-[0.15em] text-brand-blue">Core Infrastructure</p>
-        <h2 className="text-2xl font-extrabold text-text-heading sm:text-3xl">Technology Stack</h2>
+        <h2 className="font-display text-2xl font-semibold text-text-heading sm:text-3xl">Technology Stack</h2>
       </div>
       <RevealGroup className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((item, i) => {
@@ -27,7 +27,7 @@ export function TechStackGrid({ items }: { items: TechStackCard[] }) {
                 {item.badge}
               </div>
               <span className={`mb-3 mt-2 inline-block rounded-full ${accent.badgeBg} px-3 py-1 text-[10.5px] font-extrabold uppercase tracking-wide`}>{item.category}</span>
-              <h5 className="mb-3 text-lg font-extrabold text-text-heading">{item.name}</h5>
+              <h3 className="mb-3 text-lg font-extrabold text-text-heading">{item.name}</h3>
               <p className="text-[13.5px] leading-relaxed text-text-body">{item.description}</p>
             </RevealItem>
           );

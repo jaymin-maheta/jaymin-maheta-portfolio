@@ -10,6 +10,8 @@ export interface CaseStudyMeta {
   industry: string;
   stack: string;
   role: string;
+  /** One-line outcome shown on card hover — the headline result, not a feature list */
+  impact: string;
 }
 
 export interface HeroContent {

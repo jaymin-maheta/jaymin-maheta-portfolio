@@ -12,6 +12,7 @@ export const caseStudyMetas: CaseStudyMeta[] = [
     industry: "Professional Services / Accounting",
     stack: "Angular · PrimeNG · SignalR",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Replaced spreadsheets and inboxes with one system of record for client, project and billable-hour tracking.",
   },
   {
     slug: "farmgate",
@@ -23,6 +24,7 @@ export const caseStudyMetas: CaseStudyMeta[] = [
     industry: "Agriculture / Animal Feed Manufacturing",
     stack: "React · NestJS · MySQL",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "One traceable system from raw-material delivery to sale, with FEFO rotation and live recipe cost roll-up.",
   },
   {
     slug: "valyxto",
@@ -34,6 +36,7 @@ export const caseStudyMetas: CaseStudyMeta[] = [
     industry: "Wholesale Distribution",
     stack: "Angular · PrimeNG · Chart.js",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Unified selling, buying and multi-warehouse stock tracking with landed cost and a live report builder.",
   },
   {
     slug: "bmc",
@@ -45,6 +48,7 @@ export const caseStudyMetas: CaseStudyMeta[] = [
     industry: "Healthcare Provider Operations",
     stack: "Angular · PrimeNG · FullCalendar",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Connected registration through clinical care, pathology, pharmacy and billing, backed by 40+ MIS reports.",
   },
   {
     slug: "rota",
@@ -56,5 +60,6 @@ export const caseStudyMetas: CaseStudyMeta[] = [
     industry: "Workforce Management / UK Care Homes",
     stack: "Angular · PrimeNG · FullCalendar",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Drag-and-drop rostering through time logging to UK-statutory payroll, with live safety-critical coverage.",
   },
 ];

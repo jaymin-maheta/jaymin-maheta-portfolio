@@ -21,7 +21,7 @@ export function ContributionCard({ role, items, placeholder }: ContributionCardP
             </div>
             <div>
               <p className="text-[11px] font-extrabold uppercase tracking-[0.15em] text-brand-blue">My Contribution</p>
-              <h3 className="text-xl font-extrabold text-text-heading sm:text-2xl">Jaymin Maheta</h3>
+              <h2 className="font-display text-xl font-semibold text-text-heading sm:text-2xl">Jaymin Maheta</h2>
             </div>
           </div>
           <span className="rounded-full border-[1.5px] border-border-strong bg-bg-surface-alt px-4 py-1.5 text-[13px] font-bold text-text-body">{role}</span>

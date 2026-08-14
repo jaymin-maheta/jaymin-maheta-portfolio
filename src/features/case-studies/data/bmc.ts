@@ -11,6 +11,7 @@ export const bmc: CaseStudyData = {
     industry: "Healthcare Provider Operations",
     stack: "Angular · PrimeNG · FullCalendar",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Connected registration through clinical care, pathology, pharmacy and billing, backed by 40+ MIS reports.",
   },
   hero: {
     eyebrow: "Project Case Study",

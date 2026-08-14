@@ -8,7 +8,7 @@ export function FlowDiagram({ title, subtitle, steps }: { title: string; subtitl
   return (
     <Reveal className="mb-16 rounded-3xl border-2 border-border-strong bg-bg-surface p-6 shadow-xl shadow-slate-900/5 transition-colors duration-300 sm:p-8 md:mb-20 md:p-12">
       <div className="mb-8 text-center md:mb-10">
-        <h3 className="text-xl font-extrabold text-text-heading md:text-2xl">{title}</h3>
+        <h2 className="font-display text-xl font-semibold text-text-heading md:text-2xl">{title}</h2>
         <p className="mt-1.5 text-sm font-medium text-text-muted md:text-[14.5px]">{subtitle}</p>
       </div>
       <RevealGroup className="flex flex-col items-stretch gap-1 xl:flex-row xl:items-center xl:justify-between xl:gap-0">
@@ -25,7 +25,7 @@ export function FlowDiagram({ title, subtitle, steps }: { title: string; subtitl
               <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-${step.iconGradientFrom} to-${step.iconGradientTo} text-white shadow-lg xl:h-11 xl:w-11`}>
                 <Icon name={step.icon} className="h-5 w-5 xl:h-[18px] xl:w-[18px]" />
               </div>
-              <h5 className="mb-1 text-[14px] font-extrabold leading-snug text-text-heading xl:text-[12.5px]">{step.title}</h5>
+              <h3 className="mb-1 text-[14px] font-extrabold leading-snug text-text-heading xl:text-[12.5px]">{step.title}</h3>
               <span className="text-[11.5px] font-semibold leading-snug text-text-muted xl:text-[10px]">{step.subtitle}</span>
             </RevealItem>
             {i < steps.length - 1 && step.connectorLabel && (

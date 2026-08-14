@@ -11,6 +11,7 @@ export const valyxto: CaseStudyData = {
     industry: "Wholesale Distribution",
     stack: "Angular · PrimeNG · Chart.js",
     role: "Senior UI Engineer · Augmented Tech Labs",
+    impact: "Unified selling, buying and multi-warehouse stock tracking with landed cost and a live report builder.",
   },
   hero: {
     eyebrow: "Project Case Study",

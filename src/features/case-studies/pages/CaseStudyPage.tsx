@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "../../../shared/components/Layout";
 import { Navbar } from "../../../shared/components/Navbar";
+import { Footer } from "../../../shared/components/Footer";
 import { ProjectSwitcher } from "../../../shared/components/ProjectSwitcher";
 import { getAllCaseStudies, loadCaseStudyBySlug } from "../repository";
 import { MetaBadges } from "../components/MetaBadges";
@@ -70,22 +71,25 @@ export function CaseStudyPage() {
         homeLink={{ href: "/", label: "Portfolio · Jaymin Maheta →" }}
         switcher={<ProjectSwitcher projects={allProjects} activeSlug={data.meta.slug} />}
       />
-      <MetaBadges meta={data.meta} />
-      <CaseStudyHero hero={data.hero} />
-      <MetricsGrid metrics={data.metrics} />
-      <div className="relative z-10 content-auto px-5 pb-14 pt-12 sm:px-8 sm:pb-16 sm:pt-14 md:px-12 md:pb-20 md:pt-16 lg:px-16">
-        <FlowDiagram title={data.flowTitle} subtitle={data.flowSubtitle} steps={data.flow} />
-        <AboutAndChallenge about={data.about} challenge={data.challenge} />
-        <ContributionCard
-          role={data.meta.role}
-          items={data.contribution}
-          placeholder={data.contributionPlaceholder}
-        />
-        <OutcomesSection outcomes={data.outcomes} />
-        <ApproachSteps intro={data.approachIntro} steps={data.approach} />
-        <TechStackGrid items={data.techStack} />
-        <SnapshotFooter snapshot={data.snapshot} />
-      </div>
+      <main id="main-content">
+        <MetaBadges meta={data.meta} />
+        <CaseStudyHero hero={data.hero} />
+        <MetricsGrid metrics={data.metrics} />
+        <div className="relative z-10 mx-auto max-w-7xl content-auto px-5 pb-14 pt-12 sm:px-8 sm:pb-16 sm:pt-14 md:px-12 md:pb-20 md:pt-16 lg:px-16">
+          <FlowDiagram title={data.flowTitle} subtitle={data.flowSubtitle} steps={data.flow} />
+          <AboutAndChallenge about={data.about} challenge={data.challenge} />
+          <ContributionCard
+            role={data.meta.role}
+            items={data.contribution}
+            placeholder={data.contributionPlaceholder}
+          />
+          <OutcomesSection outcomes={data.outcomes} />
+          <ApproachSteps intro={data.approachIntro} steps={data.approach} />
+          <TechStackGrid items={data.techStack} />
+          <SnapshotFooter snapshot={data.snapshot} />
+        </div>
+      </main>
+      <Footer />
     </Layout>
   );
 }

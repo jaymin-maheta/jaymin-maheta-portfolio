@@ -33,7 +33,12 @@ function prefetchCaseStudy() {
 
 function ProjectGridComponent({ projects }: { projects: CaseStudyMeta[] }) {
   return (
-    <section aria-labelledby="projects-heading" onMouseEnter={prefetchCaseStudy} onFocus={prefetchCaseStudy}>
+    <section
+      id="projects"
+      aria-labelledby="projects-heading"
+      onMouseEnter={prefetchCaseStudy}
+      onFocus={prefetchCaseStudy}
+    >
       <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
         Selected Work
       </p>
