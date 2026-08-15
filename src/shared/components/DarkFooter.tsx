@@ -11,7 +11,7 @@ const LINKS = [
   },
   {
     label: "Resume",
-    href: "/assets/docs/jaymin-maheta-resume.pdf",
+    href: `${import.meta.env.BASE_URL}assets/docs/jaymin-maheta-resume.pdf`,
     display: "Download PDF",
     download: true,
   },

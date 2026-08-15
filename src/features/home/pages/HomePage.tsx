@@ -12,7 +12,6 @@ import { SkillsMatrix } from "../components/SkillsMatrix";
 import { ExperienceTimeline } from "../components/ExperienceTimeline";
 import { ProjectGrid } from "../components/ProjectGrid";
 import { TestimonialsSection } from "../components/TestimonialsSection";
-import { BlogSection } from "../components/BlogSection";
 import { ContactSection } from "../components/ContactSection";
 
 export function HomePage() {
@@ -38,7 +37,6 @@ export function HomePage() {
           { href: "#skills", label: "Skills" },
           { href: "#experience", label: "Experience" },
           { href: "#projects", label: "Work" },
-          { href: "#writing", label: "Writing" },
           { href: "#contact", label: "Contact" },
         ]}
       />
@@ -58,9 +56,7 @@ export function HomePage() {
           <ProjectGrid projects={projects} />
           <SectionDivider index={4} label="Feedback" />
           <TestimonialsSection />
-          <SectionDivider index={5} label="Writing" />
-          <BlogSection />
-          <SectionDivider index={6} label="Contact" />
+          <SectionDivider index={5} label="Contact" />
         </div>
         <ContactSection />
       </main>

@@ -63,7 +63,7 @@ export function ContactSection() {
             </RevealItem>
             <RevealItem>
               <a
-                href="/assets/docs/jaymin-maheta-resume.pdf"
+                href={`${import.meta.env.BASE_URL}assets/docs/jaymin-maheta-resume.pdf`}
                 download
                 className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-[13px] font-semibold text-text-body transition hover:-translate-y-0.5 hover:border-border-focus hover:text-text-heading focus-visible:outline-offset-2 dark:border-white/15 dark:text-white/85 dark:hover:border-white/30 dark:hover:text-white"
               >

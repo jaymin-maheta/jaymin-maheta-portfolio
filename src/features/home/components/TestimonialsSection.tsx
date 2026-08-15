@@ -9,28 +9,48 @@ interface Testimonial {
   company: string;
 }
 
-// Placeholder content — replace with real client/team quotes before publishing.
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Sample quote — swap in real feedback here. e.g. \"Jaymin turned our Figma files into a production UI faster and cleaner than we expected, and the component library he left behind is still what we build on.\"",
-    name: "Client Name",
-    role: "Role / Title",
-    company: "Company",
+      "Jaymin's creativity, versatility, and ability to take ownership truly stood out. He created an eye-catching and functional UI, developed the prototype, and stepped into development when the project needed it most. His contribution played an important role in delivering the project successfully.",
+    name: "Kandarp Patel",
+    role: "Co-Founder & CEO",
+    company: "Augmented Systems LLP",
   },
   {
     quote:
-      "Sample quote — swap in real feedback here. e.g. \"He's the rare engineer who reviews a design the way a designer would and reviews code the way a lead would — that combination is hard to find.\"",
-    name: "Client Name",
-    role: "Role / Title",
-    company: "Company",
+      "Congratulations, Jaymin! Your incredible input wherever you are is truly appreciated. You are a true gem who will shine everywhere. Your creativity, dedication, and versatility make a real difference. Well done, and keep going!",
+    name: "Kunjan Modi",
+    role: "Associate Director",
+    company: "Kemsys Technologies",
   },
   {
     quote:
-      "Sample quote — swap in real feedback here. e.g. \"Mentored two junior developers on our team through a full Angular migration without slowing the roadmap down.\"",
-    name: "Client Name",
-    role: "Role / Title",
-    company: "Company",
+      "It was a pleasure working with Jaymin at Kemsys. I've always admired his creativity and ability to bring ideas to life. His dedication, versatility, and passion for his work are truly inspiring, and this recognition is well deserved.",
+    name: "Yash Mochi",
+    role: "Technical Lead",
+    company: "Kemsys Technologies",
+  },
+  {
+    quote:
+      "I had the chance to work with Jaymin on one of my iOS projects, and he did a fabulous job. His expertise in UI/UX, creativity, and attention to detail made a strong impression. I would gladly choose him again for his UI/UX expertise.",
+    name: "Haardik Trivedi",
+    role: "Senior Mobile Engineer (Mobile + Web)",
+    company: "9Brainz",
+  },
+  {
+    quote:
+      "Jaymin's hard-working nature and willingness to take on challenges with responsibility are highly appreciated. He consistently takes ownership of his work and approaches challenges with a positive attitude.",
+    name: "Mukesh Devmurari",
+    role: "Full-Stack Web & API Developer",
+    company: "Client Project",
+  },
+  {
+    quote:
+      "Jaymin's dedication and versatility across both design and development are truly impressive. His creativity, commitment, and ability to contribute across different areas made a significant difference to the project.",
+    name: "Vishwas Dave",
+    role: "Cybersecurity Consultant",
+    company: "Client Project",
   },
 ];
 
@@ -45,22 +65,17 @@ export function TestimonialsSection() {
 
   return (
     <section id="testimonials" aria-labelledby="testimonials-heading" className="scroll-mt-20">
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
-            What People Say
-          </p>
-          <SplitText
-            as="h2"
-            id="testimonials-heading"
-            className="block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
-          >
-            Feedback from clients and teams.
-          </SplitText>
-        </div>
-        <span className="rounded-full border border-dashed border-border-strong bg-bg-surface-alt px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-text-subtle">
-          Sample content — placeholder
-        </span>
+      <div className="mb-8">
+        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-blue">
+          What People Say
+        </p>
+        <SplitText
+          as="h2"
+          id="testimonials-heading"
+          className="block text-balance font-display text-2xl font-semibold tracking-tight text-text-heading sm:text-3xl"
+        >
+          Feedback from clients and teams.
+        </SplitText>
       </div>
 
       <div className="theme-transition relative overflow-hidden rounded-2xl border border-border-light bg-bg-surface-alt p-7 sm:p-10">
